@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="slime_game_2"
+config/name="slimeboy"
 run/main_scene="res://Gameworld.tscn"
 config/icon="res://icon.png"
 
