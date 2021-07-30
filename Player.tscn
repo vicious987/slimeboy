@@ -35,7 +35,7 @@ shape = SubResource( 1 )
 
 [node name="Move" type="Node" parent="KinematicBody2D2/States"]
 script = ExtResource( 4 )
-move_speed = 500
+move_speed = 800
 
 [node name="Idle" type="Node" parent="KinematicBody2D2/States"]
 script = ExtResource( 3 )
