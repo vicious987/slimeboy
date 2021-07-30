@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "State",
+"class": "GroundState",
+"language": "GDScript",
+"path": "res://states/GroundState.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://states/State.gd"
 } ]
 _global_script_class_icons={
+"GroundState": "",
 "State": ""
 }
 

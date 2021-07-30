@@ -1,14 +1,18 @@
-extends "./State.gd"
+extends GroundState
 
 func handle_input(event:InputEvent):
-	if event.is_action_pressed("jump"):
-		emit_signal("done", "jump")
+	.handle_input(event)
 
-func update(host, delta):
-	var input_direction = get_input_direction()
-	if input_direction:
+func update(host:KinematicBody2D, delta):
+	if get_input_direction():
 		emit_signal("done", "move")
+		
+	apply_gravity()
+	host.move_and_slide(motion)
 	print(motion)
 
 func enter(host):
 	motion = Vector2.ZERO
+
+func exit(host):
+	motion.y = 0
