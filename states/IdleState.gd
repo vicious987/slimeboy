@@ -5,7 +5,7 @@ func handle_input(event:InputEvent):
 
 func update(host:KinematicBody2D, delta):
 	if get_input_direction():
-		emit_signal("done", "move")
+		emit_signal("done", "Move")
 		
 	apply_gravity()
 	host.move_and_slide(motion)

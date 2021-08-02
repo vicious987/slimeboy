@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://states/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://states/MoveState.gd" type="Script" id=4]
 [ext_resource path="res://states/Jump.gd" type="Script" id=5]
 [ext_resource path="res://Node.gd" type="Script" id=6]
+[ext_resource path="res://states/Wallslide.gd" type="Script" id=7]
+[ext_resource path="res://states/FallState.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -14,10 +16,10 @@ extents = Vector2( 25, 25 )
 modulate = Color( 0.439216, 0.835294, 0.501961, 1 )
 script = ExtResource( 2 )
 
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="KinematicBody2D2"]
+[node name="Label" type="Label" parent="KinematicBody2D"]
 self_modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
 margin_left = -62.3912
 margin_top = -138.358
@@ -29,50 +31,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
 
-[node name="States" type="Node" parent="KinematicBody2D2"]
+[node name="States" type="Node" parent="KinematicBody2D"]
 
-[node name="Move" type="Node" parent="KinematicBody2D2/States"]
+[node name="Move" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 4 )
 move_speed = 800
 
-[node name="Idle" type="Node" parent="KinematicBody2D2/States"]
+[node name="Idle" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 3 )
 
-[node name="Jump" type="Node" parent="KinematicBody2D2/States"]
+[node name="Jump" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 5 )
 
-[node name="SurfaceDetector" type="Node2D" parent="KinematicBody2D2"]
+[node name="Wallslide" type="Node" parent="KinematicBody2D/States"]
+script = ExtResource( 7 )
+
+[node name="Fall" type="Node" parent="KinematicBody2D/States"]
+script = ExtResource( 8 )
+
+[node name="SurfaceDetector" type="Node2D" parent="KinematicBody2D"]
 script = ExtResource( 6 )
 
-[node name="RayCastGroundLeft" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastGroundLeft" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( 16, 26 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 
-[node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( -16, 26 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 
-[node name="RayCastLWallUpper" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastLWallUpper" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( -26, 16 )
 enabled = true
 cast_to = Vector2( -2, 0 )
 
-[node name="RayCastLWallLower" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastLWallLower" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( -26, -16 )
 enabled = true
 cast_to = Vector2( -2, 0 )
 
-[node name="RayCastRWallLower" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastRWallLower" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( 26, 16 )
 enabled = true
 cast_to = Vector2( 2, 0 )
 
-[node name="RayCastRWallUpper" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+[node name="RayCastRWallUpper" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
 position = Vector2( 26, -16 )
 enabled = true
 cast_to = Vector2( 2, 0 )

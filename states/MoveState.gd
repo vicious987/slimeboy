@@ -17,7 +17,7 @@ func update(host, delta):
 		motion.x = lerp(motion.x, 0, 0.15)
 		if abs(motion.x) < 32:
 			motion.x = 0 
-			emit_signal("done", "idle")
+			emit_signal("done", "Idle")
 	
 	host.move_and_slide(motion, Vector2.UP)
 	#print(motion)

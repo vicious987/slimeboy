@@ -2,15 +2,20 @@ extends Node
 
 var current_state = null
 var previous_state = null
-
+onready var state_map = {}
+"""
 onready var state_map = {
 	"move" : $States/Move,
 	"idle" : $States/Idle,
-	"jump" : $States/Jump
+	"jump" : $States/Jump,
+	"wallslide" : $States/Wallslide
 }
+"""
 
 func _ready():
-	current_state = state_map["idle"]
+	for c in $States.get_children():
+		state_map[c.name] = c
+	current_state = state_map["Idle"]
 	for s in state_map.values():
 		s.connect("done", self, "_on_State_done")
 		
@@ -26,4 +31,4 @@ func _on_State_done(new_state_name_str):
 
 func _physics_process(delta):
 	current_state.update(self, delta)
-	print($SurfaceDetector.is_grounded())
+	print(current_state.motion)
