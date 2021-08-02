@@ -7,6 +7,10 @@ export var horizontal_maneuverability:int = 600
 func enter(host):
 	motion.y = -final_jump_force
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("jump"):
+		motion.y = 0
+	
 func update(host:KinematicBody2D, delta):
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
