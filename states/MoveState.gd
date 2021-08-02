@@ -23,4 +23,4 @@ func update(host, delta):
 	print(motion)
 
 func exit(host):
-	motion.y = 0
+	pass

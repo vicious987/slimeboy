@@ -15,4 +15,4 @@ func enter(host):
 	motion = Vector2.ZERO
 
 func exit(host):
-	motion.y = 0
+	pass

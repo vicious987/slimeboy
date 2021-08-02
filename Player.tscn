@@ -42,4 +42,3 @@ script = ExtResource( 3 )
 
 [node name="Jump" type="Node" parent="KinematicBody2D2/States"]
 script = ExtResource( 5 )
-jump_force = 1500

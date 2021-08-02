@@ -1,8 +1,8 @@
 extends State
 
-export var jump_force:int = 2000
+export var jump_force:int = 1800
 var final_jump_force = jump_force + max_gravity_speed
-export var horizontal_maneuverability:int = 300
+export var horizontal_maneuverability:int = 800
 
 func enter(host):
 	motion.y = -final_jump_force
@@ -20,4 +20,4 @@ func update(host:KinematicBody2D, delta):
 	print(motion)
 
 func exit(host):
-	motion.y = 0
+	pass

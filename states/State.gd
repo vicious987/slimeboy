@@ -16,12 +16,13 @@ func update(host:KinematicBody2D, delta) -> void:
 
 #Helper stuff
 var motion = Vector2()
-export var max_gravity_speed:int = 600
+export var max_gravity_speed:int = 1000
 export var gravity_speed:int = 200
 	
 func apply_gravity() -> void:
-	if motion.y < max_gravity_speed:
-		motion.y = min(motion.y + gravity_speed, max_gravity_speed)
+	#if motion.y < max_gravity_speed:
+	#	motion.y = min(motion.y + gravity_speed, max_gravity_speed)
+	motion.y = lerp(motion.y, max_gravity_speed, 0.075)
 
 func get_input_direction() -> int:
 	return int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
