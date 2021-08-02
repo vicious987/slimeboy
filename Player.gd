@@ -1,6 +1,7 @@
 extends Node2D
 
 var look_direction:int = 1
+var double_jump = true
 #onready var player_motion = $KinematicBody2D2.current_state.qwe
 onready var STATE_MACHINE = $KinematicBody2D
 onready var DEBUG_LABEL = $KinematicBody2D/Label

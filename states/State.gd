@@ -18,6 +18,8 @@ func update(host:KinematicBody2D, delta) -> void:
 var motion = Vector2()
 export var max_gravity_speed:int = 1000
 export var gravity_speed:int = 200
+var input_direction:int
+var jumps_left:int
 	
 func apply_gravity() -> void:
 	#if motion.y < max_gravity_speed:

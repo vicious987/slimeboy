@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "State",
+"class": "AirState",
+"language": "GDScript",
+"path": "res://states/AirState.gd"
+}, {
+"base": "State",
 "class": "GroundState",
 "language": "GDScript",
 "path": "res://states/GroundState.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://states/State.gd"
 } ]
 _global_script_class_icons={
+"AirState": "",
 "GroundState": "",
 "State": ""
 }

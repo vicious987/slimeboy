@@ -1,5 +1,8 @@
 extends GroundState
 
+func enter(host):
+	.enter(host)
+
 func handle_input(event:InputEvent):
 	.handle_input(event)
 
@@ -10,9 +13,6 @@ func update(host:KinematicBody2D, delta):
 	apply_gravity()
 	host.move_and_slide(motion)
 	#print(motion)
-
-func enter(host):
-	pass
 
 func exit(host):
 	pass

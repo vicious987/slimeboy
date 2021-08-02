@@ -1,16 +1,20 @@
-extends State
+extends AirState
 
 export var horizontal_maneuverability:int = 600
 
 func enter(host:KinematicBody2D) -> void:
-	return
+	pass
+	
 func exit(host:KinematicBody2D) -> void:
-	return
+	pass
+	
 func handle_input(event:InputEvent) -> void:
-	return
+	if event.is_action_pressed("jump") and owner.double_jump:
+		owner.double_jump = false
+		emit_signal("done", "Jump")
+
 func update(host:KinematicBody2D, delta) -> void:
-	var input_direction = get_input_direction()
-	update_look_direction(input_direction)
+	.update(host, delta)
 	
 	if host.is_on_floor() and motion.y >= 0:
 		if input_direction:
