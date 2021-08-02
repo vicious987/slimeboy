@@ -9,10 +9,10 @@ func update(host:KinematicBody2D, delta):
 		
 	apply_gravity()
 	host.move_and_slide(motion)
-	print(motion)
+	#print(motion)
 
 func enter(host):
-	motion = Vector2.ZERO
+	pass
 
 func exit(host):
 	pass

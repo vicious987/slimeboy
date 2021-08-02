@@ -26,3 +26,4 @@ func _on_State_done(new_state_name_str):
 
 func _physics_process(delta):
 	current_state.update(self, delta)
+	print($SurfaceDetector.is_grounded())

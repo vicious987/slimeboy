@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://states/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://states/IdleState.gd" type="Script" id=3]
 [ext_resource path="res://states/MoveState.gd" type="Script" id=4]
 [ext_resource path="res://states/Jump.gd" type="Script" id=5]
+[ext_resource path="res://Node.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -42,3 +43,36 @@ script = ExtResource( 3 )
 
 [node name="Jump" type="Node" parent="KinematicBody2D2/States"]
 script = ExtResource( 5 )
+
+[node name="SurfaceDetector" type="Node2D" parent="KinematicBody2D2"]
+script = ExtResource( 6 )
+
+[node name="RayCastGroundLeft" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( 16, 26 )
+enabled = true
+cast_to = Vector2( 0, 2 )
+
+[node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( -16, 26 )
+enabled = true
+cast_to = Vector2( 0, 2 )
+
+[node name="RayCastLWallUpper" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( -26, 16 )
+enabled = true
+cast_to = Vector2( -2, 0 )
+
+[node name="RayCastLWallLower" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( -26, -16 )
+enabled = true
+cast_to = Vector2( -2, 0 )
+
+[node name="RayCastRWallLower" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( 26, 16 )
+enabled = true
+cast_to = Vector2( 2, 0 )
+
+[node name="RayCastRWallUpper" type="RayCast2D" parent="KinematicBody2D2/SurfaceDetector"]
+position = Vector2( 26, -16 )
+enabled = true
+cast_to = Vector2( 2, 0 )

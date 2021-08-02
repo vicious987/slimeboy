@@ -2,8 +2,8 @@ extends Node
 class_name State
 
 #An Interface defining what state class should provide
-#signal for state transition
-signal done(next_state_name)
+
+signal done(next_state_name) #signal for state transition
 
 func enter(host:KinematicBody2D) -> void:
 	return

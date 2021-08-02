@@ -12,4 +12,5 @@ func _physics_process(delta):
 	DEBUG_LABEL.text =  "state: " + str(STATE_MACHINE.current_state.name) + "\n"
 	DEBUG_LABEL.text += "look dir: " + str(look_direction) + "\n"
 	#DEBUG_LABEL.text += "motion: " + str(player_motion) + "\n"
+	DEBUG_LABEL.text += "is_grounded:" + str($KinematicBody2D2/SurfaceDetector.is_grounded())
 	pass

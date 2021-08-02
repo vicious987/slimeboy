@@ -20,7 +20,7 @@ func update(host, delta):
 			emit_signal("done", "idle")
 	
 	host.move_and_slide(motion, Vector2.UP)
-	print(motion)
+	#print(motion)
 
 func exit(host):
 	pass
