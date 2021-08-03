@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://states/GroundState.gd"
 }, {
-"base": "AirState",
-"class": "JumpState",
-"language": "GDScript",
-"path": "res://states/Jump.gd"
-}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -32,7 +27,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AirState": "",
 "GroundState": "",
-"JumpState": "",
 "State": ""
 }
 

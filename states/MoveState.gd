@@ -12,14 +12,14 @@ func update(host, delta):
 	
 	apply_gravity()
 	if input_direction:
-		motion.x = lerp(motion.x, input_direction * move_speed, acc_factor)
+		player_body.motion.x = lerp(player_body.motion.x, input_direction * move_speed, acc_factor)
 	else:
-		motion.x = lerp(motion.x, 0, 0.15)
-		if abs(motion.x) < 32:
-			motion.x = 0 
+		player_body.motion.x = lerp(player_body.motion.x, 0, 0.15)
+		if abs(player_body.motion.x) < 32:
+			player_body.motion.x = 0 
 			emit_signal("done", "Idle")
 	
-	host.move_and_slide(motion, Vector2.UP)
+	host.move_and_slide(player_body.motion, Vector2.UP)
 	#print(motion)
 
 func exit(host):

@@ -11,7 +11,7 @@ func update(host:KinematicBody2D, delta):
 		emit_signal("done", "Move")
 		
 	apply_gravity()
-	host.move_and_slide(motion)
+	host.move_and_slide(player_body.motion)
 	#print(motion)
 
 func exit(host):

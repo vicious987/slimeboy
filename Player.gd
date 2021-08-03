@@ -4,6 +4,7 @@ var look_direction:int = 1
 var double_jump = true
 var is_dead = false
 var coins = 0
+var motion = Vector2()
 #onready var player_motion = $KinematicBody2D2.current_state.qwe
 onready var STATE_MACHINE = $KinematicBody2D
 onready var DEBUG_LABEL = $KinematicBody2D/Label
