@@ -5,10 +5,13 @@ var previous_state = null
 onready var state_map = {}
 
 func die():
-	get_parent().die()
+	if current_state.name != "Dead":
+		_on_State_done("Dead")
 	
 func collect_coin():
+	get_parent().coins += 1
 	print("BIG UPS!")
+
 	
 func _ready():
 	for c in $States.get_children():

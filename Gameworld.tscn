@@ -8,4 +8,8 @@
 [node name="Map" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 125.565, 257.831 )
+
+[node name="Spawnpoint" parent="Player" index="2"]
+position = Vector2( 100.45, 66.9663 )
+
+[editable path="Player"]
