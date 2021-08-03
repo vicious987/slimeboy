@@ -3,15 +3,13 @@ extends Node
 var current_state = null
 var previous_state = null
 onready var state_map = {}
-"""
-onready var state_map = {
-	"move" : $States/Move,
-	"idle" : $States/Idle,
-	"jump" : $States/Jump,
-	"wallslide" : $States/Wallslide
-}
-"""
 
+func die():
+	get_parent().die()
+	
+func collect_coin():
+	print("BIG UPS!")
+	
 func _ready():
 	for c in $States.get_children():
 		state_map[c.name] = c
@@ -31,4 +29,4 @@ func _on_State_done(new_state_name_str):
 
 func _physics_process(delta):
 	current_state.update(self, delta)
-	print(current_state.motion)
+	#print(current_state.motion)

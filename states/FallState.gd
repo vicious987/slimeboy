@@ -9,6 +9,7 @@ func exit(host:KinematicBody2D) -> void:
 	pass
 	
 func handle_input(event:InputEvent) -> void:
+	return												#! DISABLES DOUBLE JUMP
 	if event.is_action_pressed("jump") and owner.double_jump:
 		owner.double_jump = false
 		emit_signal("done", "Jump")

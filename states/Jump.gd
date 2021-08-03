@@ -1,4 +1,5 @@
 extends AirState
+class_name JumpState
 
 export var jump_force:int = 1800
 var final_jump_force = jump_force + max_gravity_speed

@@ -1,23 +1,22 @@
-extends GroundState
+extends State
 
+#make it handle both sides
+	
 func enter(host:KinematicBody2D) -> void:
-	return
+	motion.x = 0
 	
 func exit(host:KinematicBody2D) -> void:
 	return
 	
 func handle_input(event:InputEvent) -> void:
-	#pass
-	#.handle_input(event)
 	if Input.is_action_just_released("move_left"):
-		emit_signal("done", "Idle")
-	if event.is_action_pressed("jump"):
-		motion.x = 1000
-		motion.y = -3000
+		emit_signal("done", "Fall")
 	
 func update(host:KinematicBody2D, delta) -> void:
-	apply_gravity()
+	if  not host.get_node("SurfaceDetector").is_next_to_left_wall(): #fix surface det ref
+		emit_signal("done", "Fall")
 
 	if motion.y > 0:
 		motion.y = motion.y * 0.5
+	apply_gravity()
 	host.move_and_slide(motion, Vector2.UP)

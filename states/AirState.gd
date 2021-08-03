@@ -17,6 +17,6 @@ func update(host:KinematicBody2D, delta) -> void:
 	input_direction = get_input_direction()
 	update_look_direction(input_direction)
 
-	if input_direction == -1 and host.get_node("SurfaceDetector").is_next_to_left_wall():
+	if input_direction == -1 and host.get_node("SurfaceDetector").is_next_to_left_wall(): #fix
 		emit_signal("done", "Wallslide")
 
