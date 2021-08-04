@@ -3,6 +3,10 @@ class_name AirState
 
 export var jumps:int = 1
 #var jumps_left:int
+var gravity
+var jump_height = 400
+var jump_speed
+var jump_duration = 0.4
 
 func enter(host:KinematicBody2D) -> void:
 	pass
