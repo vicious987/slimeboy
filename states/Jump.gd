@@ -26,7 +26,7 @@ func handle_input(event: InputEvent) -> void:
 func update(host:KinematicBody2D, delta):
 	.update(host, delta)
 	
-	player_body.motion.y += gravity * delta
+	player_body.motion.y += gravity * delta # why need delta tho
 	
 	if player_body.motion.y > 0:
 		emit_signal("done", "Fall")

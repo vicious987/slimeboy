@@ -1,6 +1,6 @@
 extends AirState
 
-export var horizontal_maneuverability:int = 600
+export var horizontal_maneuverability:int = 800
 export(float,0,1) var acc_factor = 0.2
 
 func _ready() -> void:

@@ -11,7 +11,7 @@ extents = Vector2( 1200, 10 )
 extents = Vector2( 91.7833, 77.1758 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 21.7733, 300 )
+extents = Vector2( 21.773, 600 )
 
 [node name="Map" type="Node2D"]
 
@@ -28,7 +28,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 161.045, 508.945 )
+position = Vector2( 117.65, 695.289 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -39,7 +39,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 4.4878, 152.585 )
+position = Vector2( 7.04029, 27.5049 )
 shape = SubResource( 3 )
 
 [node name="KillArea" parent="." instance=ExtResource( 1 )]
