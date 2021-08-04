@@ -1,5 +1,8 @@
 ISSUES
 1 motion isnt reseted as slime respawns
+2 clean up code!!!!!!!!!!
+2.a state code
+2.b information flow between player node and states
 	
 WISHLIST
 1 walljumping
