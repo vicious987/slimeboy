@@ -16,8 +16,8 @@ func _ready() -> void:
 	rc_wall_r_lower = $RayCastRWallLower
 
 func is_grounded() -> bool:
-	#return rc_ground_left.is_colliding() or rc_ground_right.is_colliding()
-	return $RayCastGroundRight.is_colliding()
+	return rc_ground_left.is_colliding() or rc_ground_right.is_colliding()
+	#return $RayCastGroundRight.is_colliding()
 
 func is_next_to_wall() -> bool:
 	return is_next_to_left_wall() or is_next_to_right_wall()

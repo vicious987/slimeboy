@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://states/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://states/Wallslide.gd" type="Script" id=7]
 [ext_resource path="res://states/FallState.gd" type="Script" id=8]
 [ext_resource path="res://states/DeadState.gd" type="Script" id=9]
+[ext_resource path="res://states/Walljump.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -57,17 +58,20 @@ script = ExtResource( 8 )
 [node name="Dead" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 9 )
 
+[node name="Walljump" type="Node" parent="KinematicBody2D/States"]
+script = ExtResource( 10 )
+
 [node name="SurfaceDetector" type="Node2D" parent="KinematicBody2D"]
 script = ExtResource( 6 )
 
 [node name="RayCastGroundLeft" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( 16, 26 )
+position = Vector2( 24, 24 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 collision_mask = 4
 
 [node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( -16, 26 )
+position = Vector2( -24, 24 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 collision_mask = 4

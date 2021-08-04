@@ -16,8 +16,8 @@ func update(host:KinematicBody2D, delta) -> void:
 
 #Helper stuff
 #var motion = Vector2()
-export var max_gravity_speed:int = 1000
-export var gravity_speed:int = 200
+export var max_gravity_speed:int = 600
+export var gravity_speed:int = 100
 var input_direction:int
 var jumps_left:int
 var player_body:KinematicBody2D

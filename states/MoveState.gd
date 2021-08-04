@@ -9,8 +9,7 @@ func handle_input(event:InputEvent):
 func update(host, delta):
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
-	
-	apply_gravity()
+		
 	if input_direction:
 		player_body.motion.x = lerp(player_body.motion.x, input_direction * move_speed, acc_factor)
 	else:
@@ -18,6 +17,8 @@ func update(host, delta):
 		if abs(player_body.motion.x) < 32:
 			player_body.motion.x = 0 
 			emit_signal("done", "Idle")
+	if not player_body.is_on_ground():
+		emit_signal("done", "Fall")
 	
 	host.move_and_slide(player_body.motion, Vector2.UP)
 	#print(motion)

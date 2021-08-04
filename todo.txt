@@ -1,20 +1,14 @@
 ISSUES
-1 : when slime lands from jumping state and goes into move state, the movement
-is reseted to 0, making it look like it stutters :(
+1 motion isnt reseted as slime respawns
 	
 WISHLIST
 1 walljumping
-2 kill areas
-3 dead state
-4 respawning
-5 coins to gather
-6 moving platforms
-7 coyote jump
-8 jump availability buffer
-9 smooth out jumping
-10 squash and stretch
-11 lighting
-12 5 levels
-13 10 levels
-14 15 levels
-16 moving kill areas
+2 moving platforms
+3 coyote jump
+4 jump availability buffer
+5 smooth out jumping
+6 squash and stretch
+7 lighting
+8 5 levels
+9 10 levels
+10 15 levels

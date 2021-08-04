@@ -13,6 +13,9 @@ func collect_coin():
 	get_parent().coins += 1
 	print("BIG UPS!")
 	
+func is_on_ground():
+	return $SurfaceDetector.is_grounded()
+	
 func _ready():
 	for c in $States.get_children():
 		state_map[c.name] = c

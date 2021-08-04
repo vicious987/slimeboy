@@ -1,7 +1,7 @@
 extends Node2D
 
 var look_direction:int = 1
-var double_jump = true
+var double_jump = false
 var is_dead = false
 var coins = 0
 var motion = Vector2()

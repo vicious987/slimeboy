@@ -1,8 +1,9 @@
 extends AirState
 
-export var jump_force:float = 1800
+export var jump_force:float = 3000
 var final_jump_force = jump_force + max_gravity_speed
 export var horizontal_maneuverability:float = 600
+export(float,0,1) var acc_factor = 0.2
 
 func enter(host):
 	.enter(host)
@@ -19,7 +20,8 @@ func update(host:KinematicBody2D, delta):
 		emit_signal("done", "Fall")
 	
 	apply_gravity()
-	player_body.motion.x = input_direction * horizontal_maneuverability
+	#player_body.motion.x = input_direction * horizontal_maneuverability
+	player_body.motion.x = lerp(player_body.motion.x, input_direction * horizontal_maneuverability, acc_factor)
 	host.move_and_slide(player_body.motion, Vector2.UP)
 
 func exit(host):

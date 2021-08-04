@@ -1,6 +1,7 @@
 extends AirState
 
 export var horizontal_maneuverability:int = 600
+export(float,0,1) var acc_factor = 0.2
 
 func enter(host:KinematicBody2D) -> void:
 	pass
@@ -16,12 +17,13 @@ func handle_input(event:InputEvent) -> void:
 func update(host:KinematicBody2D, delta) -> void:
 	.update(host, delta)
 	
-	if host.is_on_floor() and player_body.motion.y >= 0:
+	if player_body.is_on_ground():# and player_body.motion.y >= 0:
 		if input_direction:
 			emit_signal("done", "Move")
 		else:
 			emit_signal("done", "Idle")
 	
 	apply_gravity()
-	player_body.motion.x = input_direction * horizontal_maneuverability
+	player_body.motion.x = lerp(player_body.motion.x, input_direction * horizontal_maneuverability, acc_factor)
 	host.move_and_slide(player_body.motion, Vector2.UP)
+
