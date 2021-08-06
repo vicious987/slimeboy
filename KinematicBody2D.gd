@@ -1,14 +1,17 @@
 extends KinematicBody2D
 
-var mv_sp = 500
 var motion = Vector2()
 
+func collect_coin():
+	get_parent().inc_coins()
+	print("BIG UPS!")
+
+func die():
+	$StateMachine.transition_state_to("Dead")
+	
 func _ready() -> void:
-	#motion.x = mv_sp
 	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:
-	$Label.text = str(motion)
-	motion.x = lerp(motion.x, mv_sp, 0.03)
 	move_and_slide(motion, Vector2.UP)
 	print(motion)

@@ -12,8 +12,6 @@ func update(host:KinematicBody2D, delta):
 	
 	if player_body.motion.y > 0:
 		emit_signal("done", "Fall")
-		
-	host.move_and_slide(player_body.motion, Vector2.UP)
 
 func exit(host):
 	pass

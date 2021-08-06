@@ -20,11 +20,8 @@ func update(host, delta):
 		if abs(player_body.motion.x) < 32:
 			emit_signal("done", "Idle")
 			
-	if not player_body.is_on_ground():
+	if not surface_detector.is_grounded():
 		emit_signal("done", "Fall")
-	
-	host.move_and_slide(player_body.motion, Vector2.UP)
-	#print(motion)
 
 func exit(host):
 	pass

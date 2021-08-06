@@ -15,5 +15,3 @@ func update(host:KinematicBody2D, delta) -> void:
 	player_body.motion.y += gravity_per_sec * delta
 	if player_body.motion.y > control_point_speed:
 		emit_signal("done","Fall")
-
-	host.move_and_slide(player_body.motion, Vector2.UP)

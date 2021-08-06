@@ -50,15 +50,15 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 464.364, -79.0927 )
+position = Vector2( 1322.29, -35.321 )
 shape = SubResource( 3 )
 
 [node name="KillArea" parent="." instance=ExtResource( 1 )]
-position = Vector2( 919.813, 468.766 )
+position = Vector2( 558.697, 532.235 )
 
 [node name="Path2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 276.151, -157.663 )
 scale = Vector2( 1.06264, 1 )
 
 [node name="Coin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 964.903, 548.82 )
+position = Vector2( 719.782, 544.443 )

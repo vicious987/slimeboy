@@ -12,7 +12,7 @@ func handle_input(event:InputEvent):
 		emit_signal("done", "Move")
 
 func update(host:KinematicBody2D, delta):
-	if not player_body.is_on_ground():
+	if not surface_detector.is_grounded():
 		emit_signal("done", "Fall")
 	player_body.motion = Vector2(0,0)
 

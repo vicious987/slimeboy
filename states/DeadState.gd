@@ -1,6 +1,7 @@
 extends State
 
 func enter(host:KinematicBody2D) -> void:
+	player_body.motion = Vector2()
 	print("press R to restart")
 	
 func exit(host:KinematicBody2D) -> void:

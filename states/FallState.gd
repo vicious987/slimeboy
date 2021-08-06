@@ -14,11 +14,10 @@ func handle_input(event:InputEvent) -> void:
 func update(host:KinematicBody2D, delta) -> void:
 	.update(host, delta)
 	
-	if player_body.is_on_ground():
+	if surface_detector.is_grounded():
 		if input_direction:
 			emit_signal("done", "Move")
 		else:
 			emit_signal("done", "Idle")
-	
-	host.move_and_slide(player_body.motion, Vector2.UP)
+
 

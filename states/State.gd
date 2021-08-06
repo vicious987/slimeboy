@@ -18,7 +18,8 @@ func update(host:KinematicBody2D, delta) -> void:
 var input_direction:int
 var jumps_left:int
 
-onready var player_body:KinematicBody2D = owner.get_node("KinematicBody2D")
+#onready var player_body:KinematicBody2D = owner.get_node("KinematicBody2D")
+onready var player_body:KinematicBody2D = get_parent().get_parent()
 onready var surface_detector = player_body.get_node("SurfaceDetector")
 
 func get_input_direction() -> int:

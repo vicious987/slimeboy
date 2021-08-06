@@ -26,5 +26,3 @@ func update(host:KinematicBody2D, delta) -> void:
 		emit_signal("done", "Fall")
 	
 	player_body.motion.y = lerp(player_body.motion.y, wallslide_speed, 0.3) #
-	
-	host.move_and_slide(player_body.motion, Vector2.UP)
