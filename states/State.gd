@@ -31,3 +31,7 @@ func get_input_direction() -> int:
 func update_look_direction(dir) -> void:
 	if dir != 0:
 		owner.look_direction = dir
+
+func get_wall_direction() -> int:
+	var surf_det = player_body.get_node("SurfaceDetector")
+	return int(surf_det.is_next_to_right_wall()) - int(surf_det.is_next_to_left_wall())

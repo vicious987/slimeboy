@@ -39,13 +39,26 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 7.04029, 27.5049 )
+position = Vector2( 94.5836, -89.9874 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 464.364, -79.0927 )
 shape = SubResource( 3 )
 
 [node name="KillArea" parent="." instance=ExtResource( 1 )]
-position = Vector2( 816.849, 541.162 )
+position = Vector2( 919.813, 468.766 )
 
 [node name="Path2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276.151, -157.663 )
+scale = Vector2( 1.06264, 1 )
 
 [node name="Coin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 661.137, 556.478 )
+position = Vector2( 964.903, 548.82 )
