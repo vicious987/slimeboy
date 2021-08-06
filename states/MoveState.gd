@@ -1,7 +1,10 @@
 extends GroundState
 
-export var move_speed = 1500
+export var move_speed = 800
 export(float,0,1) var acc_factor = 0.2
+
+func enter(host):
+	.enter(host)
 
 func handle_input(event:InputEvent):
 	.handle_input(event)
@@ -15,8 +18,8 @@ func update(host, delta):
 	else:
 		player_body.motion.x = lerp(player_body.motion.x, 0, 0.15)
 		if abs(player_body.motion.x) < 32:
-			player_body.motion.x = 0 
 			emit_signal("done", "Idle")
+			
 	if not player_body.is_on_ground():
 		emit_signal("done", "Fall")
 	

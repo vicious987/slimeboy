@@ -1,6 +1,8 @@
 extends Node2D
-var a
-var b
-func _ready() -> void:
-	pass
-#	b = int(a = 6)
+onready var variable = "test"
+
+func _init():
+	print("INIT:  ", variable)
+
+func _ready():
+	print("READY: ", variable)

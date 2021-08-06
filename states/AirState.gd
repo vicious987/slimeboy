@@ -2,11 +2,18 @@ extends State
 class_name AirState
 
 export var jumps:int = 1
-#var jumps_left:int
-var gravity
-var jump_height = 400
+
+var gravity_per_sec
 var jump_speed
-var jump_duration = 0.4
+
+export(int) var jump_height = 200
+export(float) var jump_time = 0.4
+export(int) var horizontal_maneuverability = 600
+export(float,0,1) var acc_factor = 0.2
+
+func _ready() -> void:
+	gravity_per_sec = 2 * jump_height / pow(jump_time, 2)
+	jump_speed = -sqrt(2 * gravity_per_sec * jump_height)
 
 func enter(host:KinematicBody2D) -> void:
 	pass
@@ -21,5 +28,8 @@ func update(host:KinematicBody2D, delta) -> void:
 	input_direction = get_input_direction()
 	update_look_direction(input_direction)
 
-	if input_direction and host.get_node("SurfaceDetector").is_next_to_wall(): #fix
+	if input_direction and surface_detector.is_next_to_wall():
 		emit_signal("done", "Wallslide")
+	
+	player_body.motion.y += gravity_per_sec * delta
+	player_body.motion.x = lerp(player_body.motion.x, input_direction * horizontal_maneuverability, acc_factor)

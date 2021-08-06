@@ -3,6 +3,10 @@ ISSUES
 2 clean up code!!!!!!!!!!
 2.a state code
 2.b information flow between player node and states
+
+3.  when slime jumps into the wall, he keeps some upwards momentum.
+    if slime jumps again while having this momentum, the jumps is greater
+    than expected
 	
 WISHLIST
 1 walljumping

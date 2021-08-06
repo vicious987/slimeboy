@@ -1,16 +1,8 @@
-extends State
+extends AirState
 
-var gravity
-var jump_height = 500
-var jump_speed
-var jump_duration = 0.7
-
-func _ready() -> void:
-	gravity = 2 * jump_height / pow(jump_duration, 2)
-	jump_speed = -sqrt(2 * gravity * jump_height)
-	
+export var control_point_speed = -1000
 func enter(host:KinematicBody2D) -> void:
-	player_body.motion.x = 600 * -get_wall_direction()
+	player_body.motion.x = horizontal_maneuverability * -get_wall_direction()
 	player_body.motion.y += jump_speed
 
 func exit(host:KinematicBody2D) -> void:
@@ -20,8 +12,8 @@ func handle_input(event:InputEvent) -> void:
 	return
 	
 func update(host:KinematicBody2D, delta) -> void:
-	player_body.motion.y += gravity * delta
-	if player_body.motion.y > -1000:
+	player_body.motion.y += gravity_per_sec * delta
+	if player_body.motion.y > control_point_speed:
 		emit_signal("done","Fall")
 
 	host.move_and_slide(player_body.motion, Vector2.UP)

@@ -4,6 +4,7 @@ var current_state = null
 var previous_state = null
 var motion = Vector2()
 onready var state_map = {}
+onready var bla = self
 
 func die():
 	if current_state.name != "Dead":
@@ -22,7 +23,7 @@ func _ready():
 	current_state = state_map["Idle"]
 	for s in state_map.values():
 		s.connect("done", self, "_on_State_done")
-		s.player_body = self
+		#s.player_body = self
 		
 func _input(event):
 	current_state.handle_input(event)

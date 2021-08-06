@@ -41,7 +41,6 @@ shape = SubResource( 1 )
 
 [node name="Move" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 4 )
-move_speed = 800
 
 [node name="Idle" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 3 )
@@ -60,6 +59,8 @@ script = ExtResource( 9 )
 
 [node name="Walljump" type="Node" parent="KinematicBody2D/States"]
 script = ExtResource( 10 )
+jump_height = 450
+jump_time = 0.7
 
 [node name="SurfaceDetector" type="Node2D" parent="KinematicBody2D"]
 script = ExtResource( 6 )

@@ -10,6 +10,7 @@ onready var STATE_MACHINE = $KinematicBody2D
 onready var DEBUG_LABEL = $KinematicBody2D/Label
 onready var GAME_STATE = $Gamestate
 
+
 func _ready():
 	spawn()
 	
