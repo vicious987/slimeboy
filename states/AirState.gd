@@ -15,17 +15,8 @@ export(float) var gravity_speed_cap = 1000
 func _ready() -> void:
 	gravity_per_sec = 2 * jump_height / pow(jump_time, 2)
 	jump_speed = -sqrt(2 * gravity_per_sec * jump_height)
-
-func enter(host:KinematicBody2D) -> void:
-	pass
 	
-func exit(host:KinematicBody2D) -> void:
-	pass
-	
-func handle_input(event:InputEvent) -> void:
-	return
-	
-func update(host:KinematicBody2D, delta) -> void:
+func update(delta) -> void:
 	input_direction = get_input_direction()
 	update_look_direction(input_direction)
 

@@ -18,9 +18,9 @@ func _input(event):
 func transition_state_to(new_state_name_str):
 	print(" change from ", current_state.name, " into ", new_state_name_str)
 	assert(current_state.name != new_state_name_str)
-	current_state.exit(self)
+	current_state.exit()
 	current_state = state_map[new_state_name_str]
-	current_state.enter(self)
+	current_state.enter()
 
 func _physics_process(delta):
-	current_state.update(self, delta)
+	current_state.update(delta)

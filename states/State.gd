@@ -5,13 +5,13 @@ class_name State
 
 signal done(next_state_name) #signal for state transition
 
-func enter(host:KinematicBody2D) -> void:
+func enter() -> void:
 	return
-func exit(host:KinematicBody2D) -> void:
+func exit() -> void:
 	return
 func handle_input(event:InputEvent) -> void:
 	return
-func update(host:KinematicBody2D, delta) -> void:
+func update(delta) -> void:
 	return
 
 #Helper stuff

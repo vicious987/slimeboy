@@ -3,13 +3,13 @@ extends GroundState
 export var move_speed = 800
 export(float,0,1) var acc_factor = 0.2
 
-func enter(host):
-	.enter(host)
+func enter():
+	.enter()
 
 func handle_input(event:InputEvent):
 	.handle_input(event)
 		
-func update(host, delta):
+func update(delta):
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 		
@@ -28,5 +28,5 @@ func update(host, delta):
 	sprite.scale.x = range_lerp(abs(player_body.motion.x), 0, move_speed, 1, 2.0)
 	sprite.scale.y = range_lerp(abs(player_body.motion.x), 0, move_speed, 1, 0.9)
 
-func exit(host):
+func exit():
 	pass

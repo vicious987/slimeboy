@@ -1,10 +1,10 @@
 extends State
 class_name GroundState
 
-func enter(host):
+func enter():
 	owner.double_jump = false
 
-func exit(host):
+func exit():
 	pass
 
 func handle_input(event:InputEvent) -> void:

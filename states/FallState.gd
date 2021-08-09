@@ -1,9 +1,9 @@
 extends AirState
 
-func enter(host:KinematicBody2D) -> void:
+func enter() -> void:
 	pass
 	
-func exit(host:KinematicBody2D) -> void:
+func exit() -> void:
 	player_body.motion.y = 0
 	
 func handle_input(event:InputEvent) -> void:
@@ -14,8 +14,8 @@ func handle_input(event:InputEvent) -> void:
 			owner.double_jump = false
 			emit_signal("done", "Jump")
 
-func update(host:KinematicBody2D, delta) -> void:
-	.update(host, delta)
+func update(delta) -> void:
+	.update(delta)
 	
 	if surface_detector.is_grounded():
 		if input_direction:

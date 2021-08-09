@@ -1,10 +1,10 @@
 extends State
 
-func enter(host:KinematicBody2D) -> void:
+func enter() -> void:
 	player_body.motion = Vector2()
 	print("press R to restart")
 	
-func exit(host:KinematicBody2D) -> void:
+func exit() -> void:
 	owner.reset_coins()
 	
 func handle_input(event:InputEvent) -> void:
@@ -12,5 +12,5 @@ func handle_input(event:InputEvent) -> void:
 		owner.spawn()
 		emit_signal("done", "Idle")
 		
-func update(host:KinematicBody2D, delta) -> void:
+func update(delta) -> void:
 	return
