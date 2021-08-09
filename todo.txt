@@ -1,5 +1,8 @@
 ISSUES
 1 motion isnt reseted as slime respawns
+2. should slime squash after he hits the ground?
+3. when slime hits the ceiling, he should instantly stop and fall
+4. smooth out the squash&stretch transitions
 	
 WISHLIST
 moving platforms
