@@ -21,3 +21,4 @@ func die():
 func _physics_process(delta: float) -> void:
 	move_and_slide(motion, Vector2.UP)
 	#print($CoyoteTimer.time_left)
+	print(motion)

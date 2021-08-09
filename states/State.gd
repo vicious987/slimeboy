@@ -21,6 +21,7 @@ var jumps_left:int
 #onready var player_body:KinematicBody2D = owner.get_node("KinematicBody2D")
 onready var player_body:KinematicBody2D = get_parent().get_parent()
 onready var surface_detector = player_body.get_node("SurfaceDetector")
+onready var sprite = player_body.get_node("Sprite")
 
 func get_input_direction() -> int:
 	return int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://states/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://states/DeadState.gd" type="Script" id=9]
 [ext_resource path="res://states/WalljumpState.gd" type="Script" id=10]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=11]
+[ext_resource path="res://icon.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -119,6 +120,9 @@ collision_mask = 4
 [node name="CoyoteTimer" type="Timer" parent="KinematicBody2D"]
 wait_time = 0.1
 one_shot = true
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 12 )
 
 [node name="Gamestate" type="Label" parent="."]
 margin_left = 216.0

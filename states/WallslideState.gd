@@ -26,3 +26,7 @@ func update(host:KinematicBody2D, delta) -> void:
 		emit_signal("done", "Fall")
 	
 	player_body.motion.y = lerp(player_body.motion.y, wallslide_speed, 0.3) #
+
+	#squash&stretch
+	sprite.scale.x = lerp(sprite.scale.x, 0.5, 1 - pow(0.01, delta))
+	sprite.scale.y = lerp(sprite.scale.y, 2, 1 - pow(0.01, delta))
