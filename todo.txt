@@ -1,21 +1,15 @@
 ISSUES
 1 motion isnt reseted as slime respawns
-2 clean up code!!!!!!!!!!
-2.a state code
-2.b information flow between player node and states
-
-3.  when slime jumps into the wall, he keeps some upwards momentum.
-    if slime jumps again while having this momentum, the jumps is greater
-    than expected
 	
 WISHLIST
-1 walljumping
-2 moving platforms
-3 coyote jump
-4 jump availability buffer
-5 smooth out jumping
-6 squash and stretch
-7 lighting
-8 5 levels
-9 10 levels
-10 15 levels
+moving platforms
+falling-apart platforms
+scoring system
+rats to eat (coins)
+coyote jump
+jump availability buffer
+squash and stretch
+lighting
+5 levels
+10 levels
+15 levels

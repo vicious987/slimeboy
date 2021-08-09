@@ -2,16 +2,22 @@ extends KinematicBody2D
 
 var motion = Vector2()
 
-func collect_coin():
-	get_parent().inc_coins()
-	print("BIG UPS!")
+var can_coyotejump = false
+
+func _ready():
+	$CoyoteTimer.connect("timeout", self, "on_CoyoteTimer_timeout")
+
+func on_CoyoteTimer_timeout():
+	can_coyotejump = false
+
+func start_coyote_timer():
+	can_coyotejump = true
+	$CoyoteTimer.start()
 
 func die():
 	$StateMachine.transition_state_to("Dead")
 	
-func _ready() -> void:
-	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(motion, Vector2.UP)
-	print(motion)
+	#print($CoyoteTimer.time_left)

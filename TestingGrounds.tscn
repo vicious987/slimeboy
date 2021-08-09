@@ -8,7 +8,7 @@
 extents = Vector2( 1200, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 91.7833, 77.1758 )
+extents = Vector2( 195.628, 77.1758 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 21.773, 600 )
@@ -28,7 +28,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 117.65, 695.289 )
+position = Vector2( 412.818, 518.188 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -39,7 +39,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 94.5836, -89.9874 )
+position = Vector2( -336.014, 430.897 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
@@ -50,15 +50,15 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 1322.29, -35.321 )
+position = Vector2( 1968.19, 527.234 )
 shape = SubResource( 3 )
 
 [node name="KillArea" parent="." instance=ExtResource( 1 )]
-position = Vector2( 558.697, 532.235 )
+position = Vector2( 537.862, 726.699 )
 
 [node name="Path2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 276.151, -157.663 )
+position = Vector2( 380.328, 286.825 )
 scale = Vector2( 1.06264, 1 )
 
 [node name="Coin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 719.782, 544.443 )
+position = Vector2( 712.837, 738.906 )

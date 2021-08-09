@@ -11,8 +11,11 @@ onready var rc_jump_buffer_left:RayCast2D = $RayCastJumpBufferLeft
 onready var rc_jump_buffer_right:RayCast2D = $RayCastJumpBufferRight
 
 func _ready() -> void:
-	rc_jump_buffer_left
-	
+	rc_jump_buffer_left.set_cast_to(Vector2(0, jump_buffer))
+	rc_jump_buffer_right.set_cast_to(Vector2(0, jump_buffer))
+
+func is_within_jumpbuffer() -> bool:
+	return rc_jump_buffer_left.is_colliding() or rc_jump_buffer_right.is_colliding()
 
 func is_grounded() -> bool:
 	return rc_ground_left.is_colliding() or rc_ground_right.is_colliding()

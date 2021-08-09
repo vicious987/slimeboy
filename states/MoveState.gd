@@ -21,6 +21,7 @@ func update(host, delta):
 			emit_signal("done", "Idle")
 			
 	if not surface_detector.is_grounded():
+		player_body.start_coyote_timer()
 		emit_signal("done", "Fall")
 
 func exit(host):

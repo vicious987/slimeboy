@@ -2,7 +2,7 @@ extends State
 class_name GroundState
 
 func enter(host):
-	owner.double_jump = true
+	owner.double_jump = false
 
 func exit(host):
 	pass
