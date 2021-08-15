@@ -12,6 +12,8 @@ func update(delta):
 	
 	if player_body.motion.y > 0:
 		emit_signal("done", "Fall")
+	if surface_detector.is_under_ceiling():
+		player_body.motion.y = 0
 
 func exit():
 	pass

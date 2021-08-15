@@ -11,13 +11,12 @@
 [ext_resource path="res://states/DeadState.gd" type="Script" id=9]
 [ext_resource path="res://states/WalljumpState.gd" type="Script" id=10]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=11]
-[ext_resource path="res://icon.png" type="Texture" id=12]
+[ext_resource path="res://slimeo.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
 
 [node name="Player" type="Node2D"]
-modulate = Color( 0.439216, 0.835294, 0.501961, 1 )
 script = ExtResource( 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -38,6 +37,9 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StateMachine" type="Node" parent="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -75,14 +77,14 @@ enabled = true
 cast_to = Vector2( 0, 2 )
 collision_mask = 4
 
-[node name="RayCastJumpBufferLeft" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( 24, 24 )
+[node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
+position = Vector2( -24, 24 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 collision_mask = 4
 
-[node name="RayCastGroundRight" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( -24, 24 )
+[node name="RayCastJumpBufferLeft" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
+position = Vector2( 24, 24 )
 enabled = true
 cast_to = Vector2( 0, 2 )
 collision_mask = 4
@@ -94,27 +96,39 @@ cast_to = Vector2( 0, 2 )
 collision_mask = 4
 
 [node name="RayCastLWallUpper" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( -26, 16 )
+position = Vector2( -24, 16 )
 enabled = true
-cast_to = Vector2( -2, 0 )
+cast_to = Vector2( -10, 0 )
 collision_mask = 4
 
 [node name="RayCastLWallLower" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( -26, -16 )
+position = Vector2( -24, -16 )
 enabled = true
-cast_to = Vector2( -2, 0 )
+cast_to = Vector2( -10, 0 )
 collision_mask = 4
 
 [node name="RayCastRWallLower" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( 26, 16 )
+position = Vector2( 24, 16 )
 enabled = true
-cast_to = Vector2( 2, 0 )
+cast_to = Vector2( 10, 0 )
 collision_mask = 4
 
 [node name="RayCastRWallUpper" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
-position = Vector2( 26, -16 )
+position = Vector2( 24, -16 )
 enabled = true
-cast_to = Vector2( 2, 0 )
+cast_to = Vector2( 10, 0 )
+collision_mask = 4
+
+[node name="RayCastCeilingLeft" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
+position = Vector2( -24, -24 )
+enabled = true
+cast_to = Vector2( 0, -2 )
+collision_mask = 4
+
+[node name="RayCastCeilingRight" type="RayCast2D" parent="KinematicBody2D/SurfaceDetector"]
+position = Vector2( 24, -24 )
+enabled = true
+cast_to = Vector2( 0, -2 )
 collision_mask = 4
 
 [node name="CoyoteTimer" type="Timer" parent="KinematicBody2D"]

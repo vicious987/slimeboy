@@ -1,21 +1,26 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://KillArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://KillAreaSaw.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MovingKillArea.gd" type="Script" id=2]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 407.476, 530.618, 0, 0, 0, 0, 661.252, 355.189 )
+"points": PoolVector2Array( 0, 0, 0, 0, 54.5652, 335.48, 0, 0, 0, 0, 23.378, 152.515 )
 }
 
-[node name="Path2D" type="Path2D"]
+[node name="MovingKillArea" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( 407.476, 530.618 )
-rotation = -0.574305
+position = Vector2( 54.5652, 335.48 )
 rotate = false
 loop = false
 
 [node name="KillArea" parent="PathFollow2D" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" parent="PathFollow2D/KillArea" index="1"]
+position = Vector2( 1.59832, -1.80078 )
+
+[editable path="PathFollow2D/KillArea"]

@@ -24,3 +24,8 @@ func transition_state_to(new_state_name_str):
 
 func _physics_process(delta):
 	current_state.update(delta)
+	
+func death_transition():
+	if current_state.name != "Dead":
+		transition_state_to("Dead")
+	

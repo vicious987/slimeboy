@@ -6,6 +6,7 @@
 [node name="Gameworld" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, -8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 

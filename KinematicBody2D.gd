@@ -15,7 +15,10 @@ func start_coyote_timer():
 	$CoyoteTimer.start()
 
 func die():
-	$StateMachine.transition_state_to("Dead")
+	$StateMachine.death_transition()
+	
+func collect_coin():
+	print("big ups!")	
 	
 
 func _physics_process(delta: float) -> void:
