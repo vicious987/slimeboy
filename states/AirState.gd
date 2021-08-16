@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 func update(delta) -> void:
 	input_direction = get_input_direction()
-	update_look_direction(input_direction)
+	update_sprite_direction(input_direction)
 
 	if input_direction and surface_detector.is_next_to_wall():
 		emit_signal("done", "Wallslide")

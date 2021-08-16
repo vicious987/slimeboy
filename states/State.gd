@@ -30,5 +30,12 @@ func update_look_direction(dir) -> void:
 	if dir != 0:
 		owner.look_direction = dir
 
+func update_sprite_direction(dir) -> void:
+	match dir:
+		1:
+			sprite.flip_h = false
+		-1:
+			sprite.flip_h = true
+
 func get_wall_direction() -> int:
 	return int(surface_detector.is_next_to_right_wall()) - int(surface_detector.is_next_to_left_wall())

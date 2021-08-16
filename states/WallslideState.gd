@@ -4,7 +4,9 @@ var move_to_wall:String
 export var wallslide_speed = 150
 	
 func enter() -> void:
-	match get_wall_direction():
+	var wall_dir = get_wall_direction()
+	update_sprite_direction(-wall_dir)
+	match wall_dir:
 		-1:
 			move_to_wall = "move_left"
 		1:

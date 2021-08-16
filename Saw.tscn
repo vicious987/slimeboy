@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/saw.png" type="Texture" id=1]
+[ext_resource path="res://Saw.gd" type="Script" id=2]
+[ext_resource path="res://KillArea.tscn" type="PackedScene" id=3]
+
+[node name="Saw" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="KillArea" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="KillArea/Area2D" index="0"]
+position = Vector2( -0.0130615, -0.125988 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.03823, 1.08566 )
+texture = ExtResource( 1 )
+
+[editable path="KillArea"]

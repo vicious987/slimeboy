@@ -1,5 +1,4 @@
 extends Node2D
-export(float) var rotation_speed = 0.15
 
 func _ready() -> void:
 	$Area2D.connect("body_entered", self, "on_Area2D_body_entered")

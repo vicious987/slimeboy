@@ -11,7 +11,7 @@ func handle_input(event:InputEvent):
 		
 func update(delta):
 	var input_direction = get_input_direction()
-	update_look_direction(input_direction)
+	update_sprite_direction(input_direction)
 		
 	if input_direction:
 		player_body.motion.x = lerp(player_body.motion.x, input_direction * move_speed, acc_factor)
