@@ -1,10 +1,14 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://KillAreaSaw.tscn" type="PackedScene" id=1]
-[ext_resource path="res://MovingKillArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ShoddyPlatform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://KillAreaSpikes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://obstacles/KillAreaSaw.tscn" type="PackedScene" id=1]
+[ext_resource path="res://obstacles/MovingKillArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_items/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_items/ShoddyPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://obstacles/KillAreaSpikes.tscn" type="PackedScene" id=5]
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1200, 10 )
