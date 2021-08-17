@@ -148,6 +148,19 @@ energy = 0.7
 shadow_enabled = true
 shadow_gradient_length = 20.0
 
+[node name="CameraPivot" type="Position2D" parent="KinematicBody2D"]
+position = Vector2( 64, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D/CameraPivot"]
+current = true
+smoothing_enabled = true
+drag_margin_left = 0.75
+drag_margin_top = 0.75
+drag_margin_right = 0.75
+drag_margin_bottom = 0.75
+editor_draw_screen = false
+editor_draw_drag_margin = true
+
 [node name="Gamestate" type="Label" parent="."]
 margin_left = 216.0
 margin_right = 256.0

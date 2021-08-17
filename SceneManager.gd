@@ -1,6 +1,10 @@
 extends Node2D
 
+var path_list = []
+
 func _ready() -> void:
+	path_list.append("res://levels/lvl1.tscn")
+	path_list.append("res://levels/lvl2.tscn")
 	$TransitionScreen.connect("transition_done", self, "on_TS_transition_done")
 
 func _process(delta: float) -> void:

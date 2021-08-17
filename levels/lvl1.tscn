@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://levels/walls_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/bg_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://level_items/LevelExit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 
 [node name="lvl1" type="Node2D"]
@@ -24,5 +25,8 @@ tile_data = PoolIntArray( 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 
 
 [node name="Spawnpoint" parent="Player" index="2"]
 position = Vector2( 64, 256 )
+
+[node name="LevelExit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 408, 472 )
 
 [editable path="Player"]
