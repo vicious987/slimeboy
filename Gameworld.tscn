@@ -3,7 +3,6 @@
 [ext_resource path="res://TestingGrounds.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 
-
 [node name="Gameworld" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]

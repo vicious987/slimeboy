@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://levels/walls_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://levels/bg_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://level_items/LevelExit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/level.gd" type="Script" id=5]
+
+[node name="level" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="BgTilemap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="WallsTilemap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+[node name="LevelExit" parent="." instance=ExtResource( 3 )]
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="Collectables" type="Node" parent="."]
+
+[editable path="Player"]
+
+[editable path="LevelExit"]

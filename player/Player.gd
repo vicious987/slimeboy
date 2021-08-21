@@ -23,6 +23,7 @@ func die():
 
 func spawn():
 	$KinematicBody2D.position = $Spawnpoint.position
+	get_tree().call_group("Collectables", "show")
 
 func _physics_process(delta):
 	pass

@@ -33,12 +33,14 @@ _global_script_class_icons={
 [application]
 
 config/name="slimeboy"
-run/main_scene="res://Gameworld.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [debug]
 
 gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
 
 [input]
 
