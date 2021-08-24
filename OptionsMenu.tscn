@@ -3,8 +3,14 @@
 [ext_resource path="res://OptionsMenu.gd" type="Script" id=1]
 
 [node name="OptionsMenu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -192.0
+margin_right = 320.0
+margin_bottom = 192.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,10 +37,10 @@ __meta__ = {
 }
 
 [node name="Resolution" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 51.0
-margin_top = 100.0
-margin_right = 325.0
-margin_bottom = 124.0
+margin_left = 32.0
+margin_top = 35.0
+margin_right = 306.0
+margin_bottom = 59.0
 size_flags_horizontal = 4
 custom_constants/separation = 10
 
@@ -47,7 +53,7 @@ text = "Resolution"
 align = 2
 valign = 1
 
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Resolution"]
+[node name="ResolutionPicker" type="OptionButton" parent="VBoxContainer/Resolution"]
 margin_left = 78.0
 margin_top = 2.0
 margin_right = 170.0
@@ -62,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/Resolution"]
+[node name="FullscreenBox" type="CheckBox" parent="VBoxContainer/Resolution"]
 margin_left = 180.0
 margin_right = 274.0
 margin_bottom = 24.0
@@ -75,88 +81,90 @@ __meta__ = {
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 128.0
-margin_right = 376.0
-margin_bottom = 160.0
+margin_top = 63.0
+margin_right = 338.0
+margin_bottom = 95.0
 size_flags_vertical = 0
 custom_constants/separation = 32
 
 [node name="VolumeBGM" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 164.0
-margin_right = 376.0
-margin_bottom = 180.0
+margin_top = 99.0
+margin_right = 338.0
+margin_bottom = 115.0
 
 [node name="Label" type="Label" parent="VBoxContainer/VolumeBGM"]
 margin_top = 1.0
-margin_right = 176.0
+margin_right = 169.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 text = "Background Music Volume"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/VolumeBGM"]
-margin_left = 180.0
-margin_right = 356.0
+margin_left = 173.0
+margin_right = 318.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/VolumeBGM"]
-margin_left = 360.0
+margin_left = 322.0
 margin_top = 1.0
-margin_right = 376.0
+margin_right = 338.0
 margin_bottom = 15.0
 text = "69"
 
 [node name="VolumeSFX" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 184.0
-margin_right = 376.0
-margin_bottom = 200.0
+margin_top = 119.0
+margin_right = 338.0
+margin_bottom = 135.0
 
 [node name="Label" type="Label" parent="VBoxContainer/VolumeSFX"]
 margin_top = 1.0
-margin_right = 176.0
+margin_right = 157.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 text = "Sound Effect Volume"
+percent_visible = -0.0588235
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/VolumeSFX"]
-margin_left = 180.0
-margin_right = 356.0
+margin_left = 161.0
+margin_right = 318.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
+size_flags_vertical = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/VolumeSFX"]
-margin_left = 360.0
+margin_left = 322.0
 margin_top = 1.0
-margin_right = 376.0
+margin_right = 338.0
 margin_bottom = 15.0
 text = "69"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 204.0
-margin_right = 376.0
-margin_bottom = 236.0
+margin_top = 139.0
+margin_right = 338.0
+margin_bottom = 171.0
 size_flags_vertical = 0
 custom_constants/separation = 32
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 240.0
-margin_right = 376.0
-margin_bottom = 260.0
+margin_top = 175.0
+margin_right = 338.0
+margin_bottom = 195.0
 size_flags_vertical = 0
 
 [node name="BackButton" type="Button" parent="VBoxContainer/Buttons"]
-margin_left = 72.0
-margin_right = 114.0
+margin_left = 62.0
+margin_right = 104.0
 margin_bottom = 20.0
 size_flags_horizontal = 6
 size_flags_vertical = 14
 text = "Back"
 
 [node name="ApplyButton" type="Button" parent="VBoxContainer/Buttons"]
-margin_left = 259.0
-margin_right = 307.0
+margin_left = 230.0
+margin_right = 278.0
 margin_bottom = 20.0
 size_flags_horizontal = 6
 size_flags_vertical = 14
