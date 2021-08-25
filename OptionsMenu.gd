@@ -1,38 +1,42 @@
 extends Control
 
-var fullscreen:bool = false
-var resolution = Vector2(800,600)
-var bgm_volume
-var sfx_volume
-#onready var resolution = $VBoxContainer/Resolution/ResolutionPicker.
+var res_picker:OptionButton
 
 func _ready() -> void:
-	#hide()
-	$VBoxContainer/Buttons/BackButton.connect("pressed", self, "close_options")
-	$VBoxContainer/Buttons/ApplyButton.connect("pressed", self, "apply_options")
-	$VBoxContainer/Resolution/FullscreenBox.connect("toggled", self, "toggle_fullscreen")
-	$VBoxContainer/Resolution/ResolutionPicker.connect("item_selected", self, "set_new_res")
+	res_picker = $VBoxContainer/Resolution/Picker
+	for r in Settings.resolution_list:
+		res_picker.add_item(str(r), res_picker.get_item_count() + 1)
 	$VBoxContainer/VolumeBGM/HSlider.connect("value_changed", self, "set_bgm_volume")
 	$VBoxContainer/VolumeSFX/HSlider.connect("value_changed", self, "set_sfx_volume")
+	$VBoxContainer/Buttons/BackButton.connect("pressed", self, "close")
+	$VBoxContainer/Buttons/ApplyButton.connect("pressed", self, "apply_options")
+	load_settings() # seperate testing purposes
 
-func close_options():
+func close():
 	hide()
-
-func toggle_fullscreen(status):
-	self.fullscreen = status
-
-func set_new_res(item_id):
-	var res = $VBoxContainer/Resolution/ResolutionPicker.get_item_text(item_id).split("x")
-	self.resolution = Vector2(int(res[0]), int(res[1]))
 	
+func open():
+	load_settings()
+	show()
+
 func apply_options():
-	OS.window_fullscreen = self.fullscreen
-	OS.window_size = self.resolution
+	save_settings()
+	Settings.apply()
+
+func load_settings():
+	$VBoxContainer/VolumeBGM/HSlider.value = Settings.bgm_volume
+	$VBoxContainer/VolumeSFX/HSlider.value = Settings.sfx_volume
+	$VBoxContainer/Resolution/FullscreenBox.pressed = Settings.fullscreen
+	res_picker.select(Settings.resolution_id)
+	
+func save_settings():
+	Settings.bgm_volume = $VBoxContainer/VolumeBGM/HSlider.value
+	Settings.sfx_volume = $VBoxContainer/VolumeSFX/HSlider.value
+	Settings.fullscreen = $VBoxContainer/Resolution/FullscreenBox.pressed
+	Settings.resolution_id = res_picker.selected
 
 func set_bgm_volume(val):
-	self.bgm_volume = val
 	$VBoxContainer/VolumeBGM/Label2.text = str(val)
 
 func set_sfx_volume(val):
-	self.sfx_volume = val
 	$VBoxContainer/VolumeSFX/Label2.text = str(val)	

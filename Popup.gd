@@ -21,7 +21,7 @@ func pause_game() -> void:
 	show()
 
 func open_options():
-	pass
+	$OptionsMenu.open()
 
 func quit_to_menu():
 	unpause_game()
