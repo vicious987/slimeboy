@@ -161,6 +161,8 @@ drag_margin_bottom = 0.75
 editor_draw_screen = false
 editor_draw_drag_margin = true
 
+[node name="RagdollSpawnpoint" type="Position2D" parent="KinematicBody2D"]
+
 [node name="Gamestate" type="Label" parent="."]
 margin_left = 216.0
 margin_right = 256.0

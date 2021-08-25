@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 var look_direction:int = 1
 var double_jump = false
 #var is_dead = false
@@ -19,6 +21,7 @@ func inc_coins():
 	coins += 1
 
 func die():
+	
 	print("im die!")
 
 func spawn():
