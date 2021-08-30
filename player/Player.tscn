@@ -139,7 +139,7 @@ one_shot = true
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 12 )
 
-[node name="Light2D" type="Light2D" parent="KinematicBody2D"]
+[node name="Light2D" type="Light2D" parent="KinematicBody2D/Sprite"]
 show_behind_parent = true
 texture = ExtResource( 13 )
 texture_scale = 0.75

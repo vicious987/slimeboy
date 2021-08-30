@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 func on_Area2D_body_entered(body:PhysicsBody2D) -> void:
 	if body.get_collision_layer_bit(0): # 0 for player layer
-		body.collect_coin()
+		Gamestate.incr_score()
 		hide()
 
 func hide():

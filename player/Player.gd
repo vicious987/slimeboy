@@ -1,6 +1,6 @@
 extends Node2D
 
-
+signal reseted
 
 var look_direction:int = 1
 var double_jump = false
@@ -13,20 +13,16 @@ onready var DEBUG_LABEL = $KinematicBody2D/Label
 onready var GAME_STATE = $Gamestate
 
 func _ready():
-	spawn()
-	
-func reset_coins():
-	coins = 0
-func inc_coins():
-	coins += 1
+	return_to_start()
 
-func die():
-	
-	print("im die!")
-
-func spawn():
+func return_to_start():
 	$KinematicBody2D.position = $Spawnpoint.position
-	get_tree().call_group("Collectables", "show")
+	$KinematicBody2D/Sprite.visible = true
+
+func reset():
+	return_to_start()
+	emit_signal("reseted")
+	print("singla emited")
 
 func _physics_process(delta):
 	pass

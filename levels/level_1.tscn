@@ -9,6 +9,7 @@
 [ext_resource path="res://obstacles/SpikesBlue.tscn" type="PackedScene" id=7]
 
 [node name="level" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -53,3 +54,5 @@ position = Vector2( 560, 392 )
 [editable path="Player"]
 
 [editable path="LevelExit"]
+
+[editable path="Collectables/Coin"]

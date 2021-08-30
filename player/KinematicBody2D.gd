@@ -3,10 +3,9 @@ extends KinematicBody2D
 var motion = Vector2()
 
 var can_coyotejump = false
-onready var ragdoll = load("res://player/DeadRagdoll.tscn")
+onready var ragdoll = preload("res://player/DeadRagdoll.tscn")
 
 func _ready():
-	
 	$CoyoteTimer.connect("timeout", self, "on_CoyoteTimer_timeout")
 
 func on_CoyoteTimer_timeout():
@@ -16,15 +15,14 @@ func start_coyote_timer():
 	can_coyotejump = true
 	$CoyoteTimer.start()
 
+#rewrite
 func die():
 	$StateMachine.death_transition()
 	$Sprite.hide()
-	add_child(ragdoll.instance())
-	
-	
-func collect_coin():
-	print("big ups!")	
-	
+	var rg = ragdoll.instance()
+	get_parent().add_child(rg)
+	rg.inst(position, $Sprite.scale.x, $Sprite.scale.y)
+	rg.yeet()
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(motion, Vector2.UP)

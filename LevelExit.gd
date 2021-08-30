@@ -10,3 +10,4 @@ func _ready() -> void:
 #collision bit set to player only
 func on_Area2D_body_entered(body:PhysicsBody2D):
 	call_deferred("emit_signal", "change_level", "res://levels/" + next_level_name + ".tscn")
+	get_tree().paused = true
