@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui_elements/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://ui_elements/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui_elements/OptionsMenu.tscn" type="PackedScene" id=3]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.105882, 0.164706, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+anchor_left = 0.4001
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.8
+margin_left = -8.06403
+margin_top = -1.52588e-05
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartButton" parent="MenuButtons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 212.0
+margin_bottom = 98.0
+
+[node name="Label" parent="MenuButtons/StartButton/MarginContainer" index="0"]
+margin_top = 32.0
+margin_right = 196.0
+margin_bottom = 53.0
+text = "Start"
+
+[node name="OptionsButton" parent="MenuButtons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 130.0
+margin_right = 212.0
+margin_bottom = 228.0
+
+[node name="Label" parent="MenuButtons/OptionsButton/MarginContainer" index="0"]
+margin_top = 32.0
+margin_right = 196.0
+margin_bottom = 53.0
+text = "Options"
+
+[node name="ExitButton" parent="MenuButtons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 260.0
+margin_right = 212.0
+margin_bottom = 360.0
+
+[node name="Label" parent="MenuButtons/ExitButton/MarginContainer" index="0"]
+margin_top = 33.0
+margin_right = 196.0
+margin_bottom = 54.0
+text = "Exit"
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -376.0
+margin_top = -236.0
+margin_right = 376.0
+margin_bottom = 220.0
+
+[editable path="MenuButtons/StartButton"]
+
+[editable path="MenuButtons/OptionsButton"]
+
+[editable path="MenuButtons/ExitButton"]

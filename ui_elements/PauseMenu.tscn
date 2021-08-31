@@ -1,0 +1,222 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui_elements/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://ui_elements/OptionsMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui_elements/MenuButton.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ui_elements/uipack_fixed/Font/kenvector_future_thin.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+outline_size = 1
+font_data = SubResource( 1 )
+
+[node name="PauseMenu" type="Popup"]
+pause_mode = 2
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.8
+margin_left = -33.0
+margin_right = 33.0
+custom_constants/separation = 31
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 270.0
+margin_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Paused"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 112.0
+margin_right = 270.0
+margin_bottom = 144.0
+custom_constants/separation = 32
+
+[node name="OptionsButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 175.0
+margin_right = 270.0
+margin_bottom = 215.0
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" parent="VBoxContainer/OptionsButton/MarginContainer" index="0"]
+margin_top = 3.0
+margin_right = 254.0
+margin_bottom = 24.0
+text = "Options"
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 246.0
+margin_right = 270.0
+margin_bottom = 286.0
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" parent="VBoxContainer/QuitButton/MarginContainer" index="0"]
+margin_top = 0.0
+margin_right = 254.0
+margin_bottom = 45.0
+text = "Exit  to menu
+"
+
+[node name="ResumeButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 317.0
+margin_right = 270.0
+margin_bottom = 360.0
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" parent="VBoxContainer/ResumeButton/MarginContainer" index="0"]
+margin_top = 0.0
+margin_right = 254.0
+margin_bottom = 45.0
+text = "Resume
+"
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 232.0
+margin_top = 184.0
+margin_right = -223.68
+margin_bottom = -80.0
+
+[node name="VBoxContainer" parent="OptionsMenu/TextureRect/MarginContainer" index="0"]
+margin_right = 440.0
+margin_bottom = 272.0
+
+[node name="TitleLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="0"]
+margin_right = 440.0
+margin_bottom = 39.0
+
+[node name="HSeparator3" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="1"]
+margin_top = 43.0
+margin_right = 440.0
+margin_bottom = 82.0
+
+[node name="GraphicsContainer" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="2"]
+margin_top = 86.0
+margin_right = 440.0
+margin_bottom = 110.0
+
+[node name="ResolutionLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/GraphicsContainer" index="0"]
+margin_right = 145.0
+
+[node name="ResolutionPicker" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/GraphicsContainer" index="1"]
+margin_left = 149.0
+margin_right = 241.0
+
+[node name="VSeparator" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/GraphicsContainer" index="2"]
+margin_left = 245.0
+margin_right = 277.0
+
+[node name="FullscreenLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/GraphicsContainer" index="3"]
+margin_left = 281.0
+margin_right = 291.0
+
+[node name="FullscreenBox" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/GraphicsContainer" index="4"]
+margin_left = 295.0
+margin_right = 440.0
+
+[node name="HSeparator" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="3"]
+margin_top = 114.0
+margin_right = 440.0
+margin_bottom = 146.0
+
+[node name="VolumeContainer" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="4"]
+margin_top = 150.0
+margin_right = 440.0
+margin_bottom = 186.0
+
+[node name="SFXLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="0"]
+margin_right = 144.0
+
+[node name="SFXHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="1"]
+margin_left = 148.0
+margin_right = 292.0
+
+[node name="SFXValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="2"]
+margin_left = 296.0
+margin_right = 440.0
+
+[node name="BGMLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="3"]
+margin_right = 144.0
+
+[node name="BGMHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="4"]
+margin_left = 148.0
+margin_right = 292.0
+
+[node name="BGMValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="5"]
+margin_left = 296.0
+margin_right = 440.0
+
+[node name="HSeparator2" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="5"]
+margin_top = 190.0
+margin_right = 440.0
+margin_bottom = 229.0
+
+[node name="Buttons" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer" index="6"]
+margin_top = 233.0
+margin_right = 440.0
+margin_bottom = 272.0
+
+[node name="BackButton" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/Buttons" index="0"]
+margin_right = 156.0
+margin_bottom = 39.0
+
+[node name="ApplyButton" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/Buttons" index="2"]
+margin_left = 284.0
+margin_right = 440.0
+margin_bottom = 39.0
+
+[editable path="VBoxContainer/OptionsButton"]
+
+[editable path="VBoxContainer/QuitButton"]
+
+[editable path="VBoxContainer/ResumeButton"]
+
+[editable path="OptionsMenu"]
