@@ -2,6 +2,7 @@ extends AirState
 
 func enter():
 	.enter()
+	player_body.get_node("JumpSound").play()
 	player_body.motion.y += jump_speed
 	
 func handle_input(event: InputEvent) -> void:

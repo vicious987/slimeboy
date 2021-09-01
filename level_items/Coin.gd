@@ -8,6 +8,7 @@ func on_Area2D_body_entered(body:PhysicsBody2D) -> void:
 	if body.get_collision_layer_bit(0): # 0 for player layer
 		Gamestate.incr_score()
 		hide()
+		$CollectSound.play()
 
 func hide():
 		$KinematicBody2D/Area2D/Sprite.set_deferred("visible",false)

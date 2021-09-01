@@ -2,7 +2,7 @@ extends State
 
 func enter() -> void:
 	player_body.motion = Vector2()
-	print("press R to Reset")
+	player_body.get_node("DeathSound").play()
 	
 func exit() -> void:
 	pass

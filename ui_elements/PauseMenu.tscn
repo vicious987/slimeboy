@@ -5,16 +5,15 @@
 [ext_resource path="res://ui_elements/MenuButton.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://ui_elements/uipack_fixed/Font/kenvector_future_thin.ttf"
+font_path = "res://ui_elements/fonts/kenvector_future.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 22
+size = 40
 outline_size = 1
 font_data = SubResource( 1 )
 
 [node name="PauseMenu" type="Popup"]
 pause_mode = 2
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -54,9 +53,11 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color = Color( 0.647059, 0.647059, 0.647059, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
 text = "Paused"
 align = 1
 valign = 1

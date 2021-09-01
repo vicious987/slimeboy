@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://states/FallState.gd" type="Script" id=1]
 [ext_resource path="res://states/DeadState.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://states/WallslideState.gd" type="Script" id=11]
 [ext_resource path="res://sprites/slimeo.png" type="Texture" id=12]
 [ext_resource path="res://sprites/light/light3.png" type="Texture" id=13]
+[ext_resource path="res://sounds/game/jump.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/game/death.wav" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -162,6 +164,12 @@ editor_draw_screen = false
 editor_draw_drag_margin = true
 
 [node name="RagdollSpawnpoint" type="Position2D" parent="KinematicBody2D"]
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="KinematicBody2D"]
+stream = ExtResource( 14 )
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="KinematicBody2D"]
+stream = ExtResource( 15 )
 
 [node name="Gamestate" type="Label" parent="."]
 margin_left = 216.0
