@@ -44,5 +44,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/fade_to_black = SubResource( 1 )
 anims/fade_to_normal = SubResource( 2 )

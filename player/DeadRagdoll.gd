@@ -24,7 +24,7 @@ func yeet():
 	direction.x *= side
 	apply_impulse(Vector2(0,0), direction * yeet_force)
 	add_torque(torq)
-	print("YEET with yforce, torq, dir:", yeet_force, "-", torq,"-", direction)
+	#print("YEET with yforce, torq, dir:", yeet_force, "-", torq,"-", direction)
 	
 func _physics_process(delta: float) -> void:
 	sprite.scale.x = lerp(sprite.scale.x, 1, 1 - pow(0.01, delta))

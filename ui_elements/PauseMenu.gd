@@ -1,28 +1,18 @@
 extends Popup
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		if get_tree().paused:
-			unpause_game()
-		else:
-			pause_game()
+signal resumed()
 
 func _ready() -> void:
-	$VBoxContainer/ResumeButton.connect("pressed", self, "unpause_game")
+	$VBoxContainer/ResumeButton.connect("pressed", self, "click_unpause")
 	$VBoxContainer/OptionsButton.connect("pressed", self, "open_options")
 	$VBoxContainer/QuitButton.connect("pressed", self, "quit_to_menu")
 	
-func unpause_game() -> void:
-	get_tree().paused = false
-	hide()
-
-func pause_game() -> void:
-	get_tree().paused = true
-	show()
-
+func click_unpause():
+	emit_signal("resumed")
+	
 func open_options():
 	$OptionsMenu.open()
 
 func quit_to_menu():
-	unpause_game()
+	#unpause_game()
 	get_tree().change_scene("res://ui_elements/MainMenu.tscn")

@@ -21,8 +21,8 @@ func return_to_start():
 
 func reset():
 	return_to_start()
+	$KinematicBody2D/RestartReminderLabel.hide()
 	emit_signal("reseted")
-	print("singla emited")
 
 func _physics_process(delta):
 	pass

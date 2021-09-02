@@ -10,6 +10,7 @@ func _ready() -> void:
 		res_picker.add_item(str(r), res_picker.get_item_count() + 1)
 	volume_container.get_node("BGMHSlider").connect("value_changed", self, "on_bgm_slider_moved")
 	volume_container.get_node("SFXHSlider").connect("value_changed", self, "on_sfx_slider_moved")
+	volume_container.get_node("SFXHSlider").connect("gui_input", self, "on_sfx_slider_clicked")
 	button_container.get_node("BackButton").connect("pressed", self, "on_back_clicked")
 	button_container.get_node("ApplyButton").connect("pressed", self, "on_apply_clicked")
 	load_settings() # scene testing purpose, comment out when not needed
@@ -44,7 +45,14 @@ func on_apply_clicked():
 	apply_options()
 	
 func on_bgm_slider_moved(val):
-	volume_container.get_node("BGMValueLabel").text = str(val)
+	volume_container.get_node("BGMValueLabel").text = str(floor(range_lerp(val,-80,24,0,100)))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGM"), val)
+
+func on_sfx_slider_clicked(inp:InputEvent):
+	if inp.is_action_released("lclick"):
+		$TestSoundSFX.play()
 
 func on_sfx_slider_moved(val):
-	volume_container.get_node("SFXValueLabel").text = str(val)	
+	volume_container.get_node("SFXValueLabel").text = str(floor(range_lerp(val,-80,24,0,100)))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), val)
+	#$TestSoundSFX.play()

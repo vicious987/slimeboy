@@ -3,6 +3,7 @@ extends State
 func enter() -> void:
 	player_body.motion = Vector2()
 	player_body.get_node("DeathSound").play()
+	player_body.get_node("RestartReminderLabel").show()
 	
 func exit() -> void:
 	pass

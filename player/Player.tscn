@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://states/FallState.gd" type="Script" id=1]
 [ext_resource path="res://states/DeadState.gd" type="Script" id=2]
@@ -15,9 +15,16 @@
 [ext_resource path="res://sprites/light/light3.png" type="Texture" id=13]
 [ext_resource path="res://sounds/game/jump.wav" type="AudioStream" id=14]
 [ext_resource path="res://sounds/game/death.wav" type="AudioStream" id=15]
+[ext_resource path="res://ui_elements/fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 16 )
 
 [node name="Player" type="Node2D"]
 script = ExtResource( 9 )
@@ -155,6 +162,7 @@ position = Vector2( 64, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D/CameraPivot"]
 current = true
+zoom = Vector2( 1.25, 1.25 )
 smoothing_enabled = true
 drag_margin_left = 0.75
 drag_margin_top = 0.75
@@ -167,9 +175,28 @@ editor_draw_drag_margin = true
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="KinematicBody2D"]
 stream = ExtResource( 14 )
+bus = "SFX"
 
-[node name="DeathSound" type="AudioStreamPlayer2D" parent="KinematicBody2D"]
+[node name="DeathSound" type="AudioStreamPlayer" parent="KinematicBody2D"]
 stream = ExtResource( 15 )
+bus = "SFX"
+
+[node name="RestartReminderLabel" type="Label" parent="KinematicBody2D"]
+visible = false
+light_mask = 0
+margin_left = -128.0
+margin_top = -80.0
+margin_right = 128.0
+margin_bottom = -40.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Press R to Restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Gamestate" type="Label" parent="."]
 margin_left = 216.0

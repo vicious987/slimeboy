@@ -36,5 +36,6 @@ shape = SubResource( 2 )
 
 [node name="BoundingPosition" type="Position2D" parent="."]
 
-[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+bus = "SFX"

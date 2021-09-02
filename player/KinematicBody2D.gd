@@ -21,6 +21,7 @@ func die():
 	$Sprite.hide()
 	var rg = ragdoll.instance()
 	get_parent().add_child(rg)
+	#get_parent().call_deferred("add_child", rg)
 	rg.inst(position, $Sprite.scale.x, $Sprite.scale.y)
 	rg.yeet()
 
