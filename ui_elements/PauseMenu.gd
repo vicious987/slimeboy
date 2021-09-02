@@ -13,6 +13,9 @@ func click_unpause():
 func open_options():
 	$OptionsMenu.open()
 
+func close_options():
+	$OptionsMenu.close()
+
 func quit_to_menu():
 	#unpause_game()
 	get_tree().change_scene("res://ui_elements/MainMenu.tscn")

@@ -14,6 +14,7 @@ font_data = SubResource( 1 )
 
 [node name="PauseMenu" type="Popup"]
 pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -98,11 +99,10 @@ margin_bottom = 286.0
 size_flags_stretch_ratio = 0.5
 
 [node name="Label" parent="VBoxContainer/QuitButton/MarginContainer" index="0"]
-margin_top = 0.0
+margin_top = 3.0
 margin_right = 254.0
-margin_bottom = 45.0
-text = "Exit  to menu
-"
+margin_bottom = 24.0
+text = "Exit  to menu"
 
 [node name="ResumeButton" parent="VBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -113,11 +113,10 @@ margin_bottom = 360.0
 size_flags_stretch_ratio = 0.5
 
 [node name="Label" parent="VBoxContainer/ResumeButton/MarginContainer" index="0"]
-margin_top = 0.0
+margin_top = 5.0
 margin_right = 254.0
-margin_bottom = 45.0
-text = "Resume
-"
+margin_bottom = 26.0
+text = "Resume"
 
 [node name="OptionsMenu" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -173,25 +172,25 @@ margin_top = 150.0
 margin_right = 440.0
 margin_bottom = 186.0
 
-[node name="SFXLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="0"]
+[node name="SFXLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="3"]
 margin_right = 144.0
 
-[node name="SFXHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="1"]
+[node name="SFXHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="4"]
 margin_left = 148.0
 margin_right = 292.0
 
-[node name="SFXValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="2"]
+[node name="SFXValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="5"]
 margin_left = 296.0
 margin_right = 440.0
 
-[node name="BGMLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="3"]
+[node name="BGMLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="6"]
 margin_right = 144.0
 
-[node name="BGMHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="4"]
+[node name="BGMHSlider" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="7"]
 margin_left = 148.0
 margin_right = 292.0
 
-[node name="BGMValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="5"]
+[node name="BGMValueLabel" parent="OptionsMenu/TextureRect/MarginContainer/VBoxContainer/VolumeContainer" index="8"]
 margin_left = 296.0
 margin_right = 440.0
 

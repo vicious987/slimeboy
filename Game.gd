@@ -8,7 +8,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if get_tree().paused:
-			unpause_game()
+			if $GUI/PauseMenu/OptionsMenu.visible:
+				$GUI/PauseMenu.close_options()
+			else:
+				unpause_game()
 		else:
 			pause_game()
 

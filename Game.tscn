@@ -10,7 +10,6 @@
 pause_mode = 2
 script = ExtResource( 5 )
 paused_volume_diff = 5
-paused_pitch_diff = 0.05
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
