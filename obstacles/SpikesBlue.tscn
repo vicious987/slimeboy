@@ -2,7 +2,7 @@
 
 [ext_resource path="res://sprites/spike2.png" type="Texture" id=1]
 [ext_resource path="res://obstacles/KillArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/light/light3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/light/light3less.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 6, 0, 6, -6, 0, -10, -6, -6, -6, 0 )

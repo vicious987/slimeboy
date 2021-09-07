@@ -16,7 +16,7 @@ func _input(event):
 	current_state.handle_input(event)
 
 func transition_state_to(new_state_name_str):
-	print(" change from ", current_state.name, " into ", new_state_name_str)
+	#print(" change from ", current_state.name, " into ", new_state_name_str)
 	assert(current_state.name != new_state_name_str)
 	current_state.exit()
 	current_state = state_map[new_state_name_str]

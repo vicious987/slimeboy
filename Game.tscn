@@ -27,7 +27,7 @@ bus = "BGM"
 [node name="LevelManager" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
 
-[node name="TransitionScreen" parent="LevelManager" index="1"]
+[node name="TransitionScreen" parent="LevelManager" index="0"]
 pause_mode = 2
 
 [editable path="LevelManager"]

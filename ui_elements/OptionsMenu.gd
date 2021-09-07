@@ -16,6 +16,7 @@ func _ready() -> void:
 	load_settings() # scene testing purpose, comment out when not needed
 
 func close():
+	load_settings()
 	hide()
 	
 func open():

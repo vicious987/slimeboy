@@ -26,10 +26,10 @@ func reset():
 
 func _physics_process(delta):
 	pass
-	DEBUG_LABEL.text =  "state: " + str(STATE_MACHINE.current_state.name) + "\n"
-	DEBUG_LABEL.text += "look dir: " + str(look_direction) + "\n"
+	#DEBUG_LABEL.text =  "state: " + str(STATE_MACHINE.current_state.name) + "\n"
+	#DEBUG_LABEL.text += "look dir: " + str(look_direction) + "\n"
 	##DEBUG_LABEL.text += "motion: " + str(player_motion) + "\n"
-	DEBUG_LABEL.text += "is_Lwalled:" + str($KinematicBody2D/SurfaceDetector.is_next_to_left_wall()) + "\n"
+	#DEBUG_LABEL.text += "is_Lwalled:" + str($KinematicBody2D/SurfaceDetector.is_next_to_left_wall()) + "\n"
 	#DEBUG_LABEL.text += "is_dead:" + str(is_dead) + "\n"
 	
-	GAME_STATE.text = "coins: " + str(coins)
+	#GAME_STATE.text = "coins: " + str(coins)

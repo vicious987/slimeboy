@@ -182,52 +182,6 @@ margin_bottom = 320.0
 size_flags_horizontal = 3
 columns = 3
 
-[node name="MasterLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/VolumeContainer"]
-visible = false
-margin_right = 296.0
-margin_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.776471, 0.780392, 0.776471, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Master volume"
-align = 2
-valign = 1
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="MasterHSlider" type="HSlider" parent="TextureRect/MarginContainer/VBoxContainer/VolumeContainer"]
-visible = false
-margin_right = 296.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-min_value = -80.0
-max_value = 24.0
-
-[node name="MasterValueLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/VolumeContainer"]
-visible = false
-margin_right = 296.0
-margin_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.776471, 0.780392, 0.776471, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "69"
-valign = 1
-__meta__ = {
-"_editor_description_": ""
-}
-
 [node name="SFXLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/VolumeContainer"]
 margin_right = 296.0
 margin_bottom = 18.0
