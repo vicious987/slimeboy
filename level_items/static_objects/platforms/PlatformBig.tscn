@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/platform_big.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 11.5327
+height = 106.154
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 54.7206, -12.5509, 62.469, -4.0276, 63.2439, 4.30197, 54.5269, 12.2441, -53.8657, 12.6315, -62.389, 4.49568, -62.1953, -4.0276, -54.6406, -12.3572 )
+
+[node name="PlatformBig" type="KinematicBody2D"]
+position = Vector2( 63.9047, 0 )
+collision_layer = 4
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 4 )

@@ -7,6 +7,7 @@ func exit() -> void:
 	player_body.motion.y = 0
 	
 func handle_input(event:InputEvent) -> void:
+	.handle_input(event)
 	if event.is_action_pressed("jump"):
 		if surface_detector.is_within_jumpbuffer() or player_body.can_coyotejump:
 			emit_signal("done", "Jump")

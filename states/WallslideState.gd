@@ -18,6 +18,7 @@ func exit() -> void:
 	player_body.motion.x = 0
 	
 func handle_input(event:InputEvent) -> void:
+	.handle_input(event)
 	if Input.is_action_just_released(move_to_wall):
 		emit_signal("done", "Fall")
 	if Input.is_action_just_pressed("jump"):

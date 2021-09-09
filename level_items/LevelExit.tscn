@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://LevelExit.gd" type="Script" id=1]
+[ext_resource path="res://level_items/LevelExit.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.0
+radius = 18.1124
 
 [node name="LevelExit" type="Node2D"]
 script = ExtResource( 1 )

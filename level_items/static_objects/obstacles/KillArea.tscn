@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -8,12 +8,8 @@ func _ready() -> void:
 
 func on_Area2D_body_entered(body:PhysicsBody2D) -> void:
 	if body.get_collision_layer_bit(0): # players layer is on 0
-
 		body.call_deferred(\"die\")
 "
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 6.92631
 
 [node name="KillArea" type="Node2D"]
 scale = Vector2( 2, 2 )
@@ -23,4 +19,3 @@ script = SubResource( 1 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )

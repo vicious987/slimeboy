@@ -6,7 +6,7 @@ func enter():
 	player_body.motion.y += jump_speed
 	
 func handle_input(event: InputEvent) -> void:
-	return
+	.handle_input(event)
 	
 func update(delta):
 	.update(delta)

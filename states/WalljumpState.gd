@@ -9,6 +9,7 @@ func exit() -> void:
 	return
 	
 func handle_input(event:InputEvent) -> void:
+	.handle_input(event)
 	return
 	
 func update(delta) -> void:

@@ -16,6 +16,9 @@ func _ready() -> void:
 	gravity_per_sec = 2 * jump_height / pow(jump_time, 2)
 	jump_speed = -sqrt(2 * gravity_per_sec * jump_height)
 	
+func handle_input(event: InputEvent) -> void:
+	.handle_input(event)
+
 func update(delta) -> void:
 	input_direction = get_input_direction()
 	update_sprite_direction(input_direction)
