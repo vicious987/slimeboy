@@ -34,11 +34,12 @@ position = Vector2( -312, 112 )
 [node name="Spawnpoint" parent="Player" index="2"]
 position = Vector2( -280, 32 )
 
-[node name="LevelExit" parent="." index="4"]
-next_level_name = "lvl_2"
+[node name="Sprite" parent="Player/Spawnpoint" index="0"]
+position = Vector2( 28.7076, -90.2237 )
 
-[node name="CollisionShape2D" parent="LevelExit/Area2D" index="0"]
-position = Vector2( 1028.44, 112 )
+[node name="LevelExit" parent="." index="4"]
+position = Vector2( 1010.92, 92.2742 )
+next_level_name = "lvl_2"
 
 [node name="SpikesBlue" parent="Obstacles" index="0" instance=ExtResource( 2 )]
 position = Vector2( 288, 224 )
@@ -73,7 +74,7 @@ scale = Vector2( 3, 3 )
 position = Vector2( 128, 72 )
 
 [node name="Torch2" parent="Decorations" index="1" instance=ExtResource( 3 )]
-position = Vector2( 974.382, 83.5325 )
+position = Vector2( 882.108, 73.2798 )
 
 [node name="Coin" parent="Collectables" index="0" instance=ExtResource( 5 )]
 position = Vector2( -192, 152 )

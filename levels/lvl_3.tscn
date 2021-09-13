@@ -40,15 +40,11 @@ tile_data = PoolIntArray( -2359343, 0, 65537, -2359342, 0, 65537, -2359341, 0, 6
 
 [node name="Spawnpoint" parent="Player" index="2"]
 position = Vector2( -488, 192 )
+rotation = -1.5708
 
 [node name="LevelExit" parent="." index="4"]
+position = Vector2( -96, -608 )
 next_level_name = "lvl_4"
-
-[node name="Area2D" parent="LevelExit" index="0"]
-position = Vector2( -8, -8 )
-
-[node name="CollisionShape2D" parent="LevelExit/Area2D" index="0"]
-position = Vector2( -88, -560 )
 
 [node name="MovingObject" parent="Obstacles" index="0" instance=ExtResource( 5 )]
 speed = 8.0

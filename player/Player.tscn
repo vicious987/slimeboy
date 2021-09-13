@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://states/FallState.gd" type="Script" id=1]
 [ext_resource path="res://states/DeadState.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://player/SurfaceDetector.gd" type="Script" id=10]
 [ext_resource path="res://states/WallslideState.gd" type="Script" id=11]
 [ext_resource path="res://sprites/slimeo.png" type="Texture" id=12]
+[ext_resource path="res://sprites/sewer.png" type="Texture" id=13]
 [ext_resource path="res://sounds/game/jump.wav" type="AudioStream" id=14]
 [ext_resource path="res://sounds/game/death.wav" type="AudioStream" id=15]
 [ext_resource path="res://ui_elements/fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=16]
@@ -214,3 +215,7 @@ __meta__ = {
 }
 
 [node name="Spawnpoint" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Spawnpoint"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
