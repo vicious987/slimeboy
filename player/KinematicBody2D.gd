@@ -17,8 +17,8 @@ func start_coyote_timer():
 
 #rewrite
 func die():
+	print(":(")
 	$StateMachine.death_transition()
-	$Sprite.hide()
 	var rg = ragdoll.instance()
 	get_parent().add_child(rg)
 	#get_parent().call_deferred("add_child", rg)
@@ -27,5 +27,4 @@ func die():
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(motion, Vector2.UP)
-	#print($CoyoteTimer.time_left)
 	#print(motion)

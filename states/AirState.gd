@@ -30,5 +30,5 @@ func update(delta) -> void:
 	player_body.motion.x = lerp(player_body.motion.x, input_direction * horizontal_maneuverability, acc_factor)
 	
 	#squash&stretch
-	sprite.scale.y = range_lerp(abs(player_body.motion.y), 0, abs(jump_speed), 2.0, 0.5)
+	sprite.scale.y = range_lerp(abs(player_body.motion.y), 0, abs(jump_speed), 1.75, 0.5)
 	sprite.scale.x = range_lerp(abs(player_body.motion.y), 0, abs(jump_speed), 0.5, 1.5)

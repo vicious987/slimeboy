@@ -25,7 +25,7 @@ func update(delta):
 		emit_signal("done", "Fall")
 	
 	#squash&stretch
-	sprite.scale.x = range_lerp(abs(player_body.motion.x), 0, move_speed, 1, 2.0)
+	sprite.scale.x = range_lerp(abs(player_body.motion.x), 0, move_speed, 1, 1.5)
 	sprite.scale.y = range_lerp(abs(player_body.motion.x), 0, move_speed, 1, 0.9)
 
 func exit():

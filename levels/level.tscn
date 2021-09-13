@@ -10,6 +10,7 @@
 script = ExtResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+pause_mode = 2
 
 [node name="BgTilemap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )

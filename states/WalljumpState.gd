@@ -2,6 +2,7 @@ extends AirState
 
 export var control_point_speed = -1000
 func enter() -> void:
+	player_body.get_node("JumpSound").play()
 	player_body.motion.x = horizontal_maneuverability * -get_wall_direction()
 	player_body.motion.y += jump_speed
 

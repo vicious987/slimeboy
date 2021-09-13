@@ -1,8 +1,6 @@
 extends Node
 class_name State
 
-#An Interface defining what state class should provide
-
 signal done(next_state_name) #signal for state transition
 
 func enter() -> void:

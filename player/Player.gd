@@ -22,11 +22,12 @@ func return_to_start():
 func reset():
 	return_to_start()
 	$KinematicBody2D/RestartReminderLabel.hide()
+	#$KinematicBody2D/CollisionShape2D.disabled = false
 	emit_signal("reseted")
 
 func _physics_process(delta):
 	pass
-	#DEBUG_LABEL.text =  "state: " + str(STATE_MACHINE.current_state.name) + "\n"
+	DEBUG_LABEL.text =  "state: " + str(STATE_MACHINE.current_state.name) + "\n"
 	#DEBUG_LABEL.text += "look dir: " + str(look_direction) + "\n"
 	##DEBUG_LABEL.text += "motion: " + str(player_motion) + "\n"
 	#DEBUG_LABEL.text += "is_Lwalled:" + str($KinematicBody2D/SurfaceDetector.is_next_to_left_wall()) + "\n"
