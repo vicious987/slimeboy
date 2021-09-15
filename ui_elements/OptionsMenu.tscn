@@ -55,7 +55,7 @@ __meta__ = {
 
 [node name="TitleLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
 margin_right = 896.0
-margin_bottom = 111.0
+margin_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 5
@@ -78,21 +78,23 @@ __meta__ = {
 
 [node name="HSeparator3" type="HSeparator" parent="TextureRect/MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 115.0
+margin_top = 107.0
 margin_right = 896.0
-margin_bottom = 226.0
+margin_bottom = 210.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 32
 
 [node name="GraphicsContainer" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
-visible = false
+margin_left = 379.0
 margin_top = 214.0
-margin_right = 896.0
+margin_right = 517.0
 margin_bottom = 240.0
+size_flags_horizontal = 4
 columns = 5
 
 [node name="ResolutionLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/GraphicsContainer"]
+visible = false
 margin_right = 323.0
 margin_bottom = 26.0
 grow_horizontal = 2
@@ -111,8 +113,8 @@ __meta__ = {
 }
 
 [node name="ResolutionPicker" type="OptionButton" parent="TextureRect/MarginContainer/VBoxContainer/GraphicsContainer"]
-margin_left = 327.0
-margin_right = 419.0
+visible = false
+margin_right = 92.0
 margin_bottom = 26.0
 text = "600 x 800"
 align = 1
@@ -121,9 +123,9 @@ __meta__ = {
 }
 
 [node name="VSeparator" type="VSeparator" parent="TextureRect/MarginContainer/VBoxContainer/GraphicsContainer"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 423.0
-margin_right = 455.0
+margin_right = 32.0
 margin_bottom = 26.0
 size_flags_horizontal = 0
 custom_constants/separation = 32
@@ -132,13 +134,11 @@ __meta__ = {
 }
 
 [node name="FullscreenLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/GraphicsContainer"]
-margin_left = 459.0
-margin_right = 569.0
+margin_right = 110.0
 margin_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.776471, 0.780392, 0.776471, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -151,14 +151,14 @@ __meta__ = {
 }
 
 [node name="FullscreenBox" type="CheckBox" parent="TextureRect/MarginContainer/VBoxContainer/GraphicsContainer"]
-margin_left = 573.0
-margin_right = 896.0
+margin_left = 114.0
+margin_right = 138.0
 margin_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 mouse_filter = 1
-size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.776471, 0.780392, 0.776471, 1 )
 align = 1
@@ -169,17 +169,17 @@ __meta__ = {
 
 [node name="HSeparator" type="HSeparator" parent="TextureRect/MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 230.0
+margin_top = 244.0
 margin_right = 896.0
-margin_bottom = 262.0
+margin_bottom = 276.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 custom_constants/separation = 32
 
 [node name="VolumeContainer" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
-margin_top = 266.0
+margin_top = 280.0
 margin_right = 896.0
-margin_bottom = 306.0
+margin_bottom = 320.0
 size_flags_horizontal = 3
 columns = 3
 
@@ -284,16 +284,16 @@ __meta__ = {
 
 [node name="HSeparator2" type="HSeparator" parent="TextureRect/MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 310.0
+margin_top = 324.0
 margin_right = 896.0
-margin_bottom = 421.0
+margin_bottom = 427.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 32
 
 [node name="Buttons" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
 modulate = Color( 0.678431, 0.72549, 0.678431, 1 )
-margin_top = 425.0
+margin_top = 431.0
 margin_right = 896.0
 margin_bottom = 536.0
 size_flags_horizontal = 3
@@ -308,12 +308,12 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 384.0
-margin_bottom = 111.0
+margin_bottom = 105.0
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer/Buttons/BackButton/MarginContainer" index="0"]
-margin_top = 39.0
+margin_top = 36.0
 margin_right = 368.0
-margin_bottom = 60.0
+margin_bottom = 57.0
 text = "back"
 
 [node name="VSeparator" type="VSeparator" parent="TextureRect/MarginContainer/VBoxContainer/Buttons"]
@@ -332,13 +332,13 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 512.0
 margin_right = 896.0
-margin_bottom = 111.0
+margin_bottom = 105.0
 size_flags_horizontal = 11
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer/Buttons/ApplyButton/MarginContainer" index="0"]
-margin_top = 39.0
+margin_top = 36.0
 margin_right = 368.0
-margin_bottom = 60.0
+margin_bottom = 57.0
 text = "Apply"
 
 [node name="TestSoundSFX" type="AudioStreamPlayer" parent="."]
