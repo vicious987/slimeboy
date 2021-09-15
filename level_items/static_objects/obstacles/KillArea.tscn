@@ -8,6 +8,8 @@ func _ready() -> void:
 
 func on_Area2D_body_entered(body:PhysicsBody2D) -> void:
 	print(\"body entered!\")
+	#get_parent().name
+	print(get_parent().name)
 	if body.get_collision_layer_bit(0): # players layer is on 0
 		body.call_deferred(\"die\")
 "

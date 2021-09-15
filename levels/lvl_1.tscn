@@ -101,9 +101,9 @@ margin_bottom = 32.3999
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "A - move right
-d - move left
-W - jump"
+text = "w - jump
+d - move right
+a - move left"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""

@@ -207,6 +207,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Gamestate" type="Label" parent="."]
+visible = false
 margin_left = 216.0
 margin_right = 256.0
 margin_bottom = 14.0

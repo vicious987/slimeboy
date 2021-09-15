@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="slimeboy"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://ui_elements/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
