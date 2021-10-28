@@ -9,7 +9,6 @@ func _ready():
 	for c in get_children():
 		c.connect("done", self, "transition_state_to") # move it to connector's responsobility?
 		state_map[c.name] = c
-
 	current_state = state_map["Idle"]
 		
 func _input(event):
@@ -28,4 +27,3 @@ func _physics_process(delta):
 func death_transition():
 	if current_state.name != "Dead":
 		transition_state_to("Dead")
-	

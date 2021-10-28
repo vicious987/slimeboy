@@ -20,17 +20,18 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
 
-[sub_resource type="StreamTexture" id=2]
-flags = 4
-load_path = "res://.import/light3less.png-1857f4138f5ccb93dc3454550b1e0107.stex"
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 16 )
 
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/light3less.png-1857f4138f5ccb93dc3454550b1e0107.stex"
+
 [node name="Player" type="Node2D"]
+z_index = 1
 script = ExtResource( 9 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -38,6 +39,7 @@ collision_mask = 14
 script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="KinematicBody2D"]
+visible = false
 self_modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
 margin_left = -62.3912
 margin_top = -138.358
@@ -149,18 +151,6 @@ collision_mask = 4
 wait_time = 0.1
 one_shot = true
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-texture = ExtResource( 12 )
-
-[node name="Light2D" type="Light2D" parent="KinematicBody2D/Sprite"]
-show_behind_parent = true
-texture = SubResource( 2 )
-texture_scale = 0.75
-color = Color( 0.0980392, 0.831373, 0.0117647, 1 )
-energy = 0.7
-shadow_enabled = true
-shadow_gradient_length = 20.0
-
 [node name="CameraPivot" type="Position2D" parent="KinematicBody2D"]
 position = Vector2( 64, 0 )
 
@@ -192,7 +182,7 @@ margin_left = -128.0
 margin_top = -80.0
 margin_right = 128.0
 margin_bottom = -40.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Press R to Restart"
@@ -205,6 +195,19 @@ __meta__ = {
 [node name="DoubleTapTimer" type="Timer" parent="KinematicBody2D"]
 wait_time = 0.5
 one_shot = true
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="Light2D" type="Light2D" parent="KinematicBody2D/Sprite"]
+show_behind_parent = true
+texture = SubResource( 3 )
+texture_scale = 0.75
+color = Color( 0.0980392, 0.831373, 0.0117647, 1 )
+energy = 0.7
+shadow_enabled = true
+shadow_gradient_length = 20.0
 
 [node name="Gamestate" type="Label" parent="."]
 visible = false

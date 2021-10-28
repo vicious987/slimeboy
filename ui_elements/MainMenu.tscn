@@ -46,38 +46,38 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 212.0
-margin_bottom = 98.0
+margin_bottom = 93.0
 
 [node name="Label" parent="MenuButtons/StartButton/MarginContainer" index="0"]
-margin_top = 32.0
+margin_top = 30.0
 margin_right = 196.0
-margin_bottom = 53.0
+margin_bottom = 51.0
 text = "Start"
 
 [node name="OptionsButton" parent="MenuButtons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 130.0
+margin_top = 125.0
 margin_right = 212.0
-margin_bottom = 228.0
+margin_bottom = 219.0
 
 [node name="Label" parent="MenuButtons/OptionsButton/MarginContainer" index="0"]
-margin_top = 32.0
+margin_top = 30.0
 margin_right = 196.0
-margin_bottom = 53.0
+margin_bottom = 51.0
 text = "Options"
 
 [node name="ExitButton" parent="MenuButtons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 260.0
+margin_top = 251.0
 margin_right = 212.0
-margin_bottom = 360.0
+margin_bottom = 345.0
 
 [node name="Label" parent="MenuButtons/ExitButton/MarginContainer" index="0"]
-margin_top = 33.0
+margin_top = 30.0
 margin_right = 196.0
-margin_bottom = 54.0
+margin_bottom = 51.0
 text = "Exit"
 
 [node name="OptionsMenu" parent="." instance=ExtResource( 3 )]
@@ -124,7 +124,5 @@ margin_right = -8.0
 margin_bottom = -11.0
 
 [editable path="MenuButtons/StartButton"]
-
 [editable path="MenuButtons/OptionsButton"]
-
 [editable path="MenuButtons/ExitButton"]

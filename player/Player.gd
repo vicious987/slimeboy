@@ -18,6 +18,7 @@ func _ready():
 func return_to_start():
 	$KinematicBody2D.position = $Spawnpoint.position
 	$KinematicBody2D/Sprite.visible = true
+	
 
 func reset():
 	return_to_start()
